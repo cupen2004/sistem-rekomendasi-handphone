@@ -19,8 +19,11 @@ function setupSearchInputs() {
   for (let i = 1; i <= 3; i++) {
     const input = document.getElementById(`search-${i}`);
     const dropdown = document.getElementById(`dropdown-${i}`);
+    let isSelecting = false; // Flag untuk prevent input event saat select
 
     input.addEventListener('input', (e) => {
+      if (isSelecting) return; // Skip jika sedang select dari dropdown
+      
       const query = e.target.value.toLowerCase();
       
       if (query.length < 2) {
@@ -50,8 +53,12 @@ function setupSearchInputs() {
             const phoneName = option.querySelector('.option-name').textContent;
             selectPhone(phoneId, index);
             dropdown.style.display = 'none';
+            
+            // Set flag sebelum set value
+            isSelecting = true;
             input.value = phoneName; // Set nama HP ke input box
             input.setAttribute('data-selected-id', phoneId); // Simpan ID
+            setTimeout(() => isSelecting = false, 100); // Reset flag setelah 100ms
           });
         });
       } else {
