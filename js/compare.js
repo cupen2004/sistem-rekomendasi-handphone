@@ -36,8 +36,8 @@ function setupSearchInputs() {
       if (filtered.length > 0) {
         dropdown.innerHTML = filtered.slice(0, 10).map(phone => `
           <div class="datalist-option" data-index="${i - 1}" data-phone-id="${phone.id}">
-            <div class="option-name">${phone.brand} ${phone.model}</div>
-            <div class="option-price">${formatPrice(phone.price)}</div>
+            <div class="option-name" style="color: #000000 !important;">${phone.brand} ${phone.model}</div>
+            <div class="option-price" style="color: #333333 !important;">${formatPrice(phone.price)}</div>
           </div>
         `).join('');
         dropdown.style.display = 'block';
