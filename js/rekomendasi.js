@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsCount = document.getElementById('results-count');
   const initialState = document.getElementById('initial-state');
 
+  // Restore saved results on page load
+  restoreSavedResults();
+
   // Handle form submit
   filterForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -23,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsSection.style.display = 'none';
     resultsError.style.display = 'none';
     initialState.style.display = 'block';
+    // Clear saved results
+    sessionStorage.removeItem('lastSearchResults');
+    sessionStorage.removeItem('lastSearchFilters');
   });
 
   async function searchPhones() {
@@ -67,6 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsTitle.textContent = hasFilters ? 'Hasil Rekomendasi' : 'Semua HP';
         resultsCount.textContent = `Ditemukan ${data.data.length} HP`;
         renderResults(data.data, hasFilters);
+        
+        // Save results and filters to sessionStorage
+        sessionStorage.setItem('lastSearchResults', JSON.stringify(data.data));
+        sessionStorage.setItem('lastSearchFilters', JSON.stringify({ filters, hasFilters }));
       } else {
         resultsSection.style.display = 'block';
         resultsTitle.textContent = 'Hasil Pencarian';
@@ -148,5 +158,37 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       `;
     }).join('');
+  }
+
+  function restoreSavedResults() {
+    const savedResults = sessionStorage.getItem('lastSearchResults');
+    const savedFilters = sessionStorage.getItem('lastSearchFilters');
+    
+    if (savedResults && savedFilters) {
+      try {
+        const results = JSON.parse(savedResults);
+        const { filters, hasFilters } = JSON.parse(savedFilters);
+        
+        // Restore form values
+        if (filters.minPrice) document.getElementById('min-price').value = filters.minPrice;
+        if (filters.maxPrice) document.getElementById('max-price').value = filters.maxPrice;
+        if (filters.brand) document.getElementById('brand').value = filters.brand;
+        if (filters.minRam) document.getElementById('min-ram').value = filters.minRam;
+        if (filters.minStorage) document.getElementById('min-storage').value = filters.minStorage;
+        if (filters.minBattery) document.getElementById('min-battery').value = filters.minBattery;
+        if (filters.minCamera) document.getElementById('min-camera').value = filters.minCamera;
+        
+        // Restore results
+        initialState.style.display = 'none';
+        resultsSection.style.display = 'block';
+        resultsTitle.textContent = hasFilters ? 'Hasil Rekomendasi' : 'Semua HP';
+        resultsCount.textContent = `Ditemukan ${results.length} HP`;
+        renderResults(results, hasFilters);
+      } catch (error) {
+        console.error('Error restoring results:', error);
+        sessionStorage.removeItem('lastSearchResults');
+        sessionStorage.removeItem('lastSearchFilters');
+      }
+    }
   }
 });

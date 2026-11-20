@@ -941,20 +941,20 @@ body {
 
 .spec-label {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #495057;
   font-weight: 500;
 }
 
 .spec-value {
-  font-weight: 500;
-  color: var(--text-primary);
+  font-weight: 600;
+  color: #1a1a1a;
   font-size: 0.9375rem;
 }
 
 .spec-value-highlight {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.25rem;
-  color: var(--text-primary);
+  color: #000000;
 }
 
 /* Loading & Error States */
