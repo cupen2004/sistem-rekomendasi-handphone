@@ -120,12 +120,12 @@ function renderComparison() {
           <div class="compare-specs">
             <div class="compare-spec-item">
               <div class="compare-spec-label">Processor</div>
-              <div class="compare-spec-value">${phone.chipset || 'N/A'}</div>
+              <div class="compare-spec-value" style="color: var(--gray-100);">${phone.chipset || 'N/A'}</div>
             </div>
 
             <div class="compare-spec-item">
               <div class="compare-spec-label">OS</div>
-              <div class="compare-spec-value">${phone.os || 'N/A'}</div>
+              <div class="compare-spec-value" style="color: var(--gray-100);">${phone.os || 'N/A'}</div>
             </div>
 
             <div class="compare-spec-item">
@@ -155,20 +155,20 @@ function renderComparison() {
 
             <div class="compare-spec-item">
               <div class="compare-spec-label">📺 Display</div>
-              <div class="compare-spec-value">${formatDisplay(phone.display_size)}</div>
+              <div class="compare-spec-value" style="color: var(--gray-100);">${formatDisplay(phone.display_size)}</div>
             </div>
 
             ${phone.display_type ? `
               <div class="compare-spec-item">
                 <div class="compare-spec-label">Display Type</div>
-                <div class="compare-spec-value">${phone.display_type}</div>
+                <div class="compare-spec-value" style="color: var(--gray-100);">${phone.display_type}</div>
               </div>
             ` : ''}
 
             ${phone.release_date ? `
               <div class="compare-spec-item">
                 <div class="compare-spec-label">📅 Tanggal Rilis</div>
-                <div class="compare-spec-value">${phone.release_date}</div>
+                <div class="compare-spec-value" style="color: var(--gray-100);">${phone.release_date}</div>
               </div>
             ` : ''}
 
