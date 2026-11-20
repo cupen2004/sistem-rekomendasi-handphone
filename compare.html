@@ -130,7 +130,41 @@
       color: var(--gray-100);
     }
 
-    /* Dropdown styles moved to css/style.css for global use */
+    /* FORCE DROPDOWN VISIBILITY - MAXIMUM SPECIFICITY */
+    #dropdown-1, #dropdown-2, #dropdown-3,
+    .datalist-dropdown {
+      background-color: #ffffff !important;
+    }
+    
+    #dropdown-1 .datalist-option,
+    #dropdown-2 .datalist-option,
+    #dropdown-3 .datalist-option,
+    .datalist-option {
+      background-color: #ffffff !important;
+    }
+    
+    #dropdown-1 .option-name,
+    #dropdown-2 .option-name,
+    #dropdown-3 .option-name,
+    .option-name {
+      color: #000000 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    #dropdown-1 .option-price,
+    #dropdown-2 .option-price,
+    #dropdown-3 .option-price,
+    .option-price {
+      color: #333333 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+      font-size: 0.875rem;
+    }
   </style>
 </head>
 <body>
