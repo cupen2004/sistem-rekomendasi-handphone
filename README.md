@@ -1,305 +1,346 @@
-# 🎨 PhoneRec Frontend
+# 📱 PhoneRec - Sistem Rekomendasi Handphone
 
-Frontend aplikasi PhoneRec menggunakan **Vanilla JavaScript**, **HTML5**, dan **CSS3** tanpa framework. Ringan, cepat, dan mudah dikustomisasi.
+Aplikasi web untuk memberikan rekomendasi handphone yang sesuai dengan budget dan kebutuhan pengguna menggunakan algoritma **Content-Based Filtering** dengan **Cosine Similarity**.
 
-## 📁 Struktur Folder
+🌐 **Live Demo**: [cupen2004.github.io/sistem-rekomendasi-handphone](https://cupen2004.github.io/sistem-rekomendasi-handphone/)
+
+---
+
+## 🎯 Fitur Utama
+
+- **Rekomendasi Pintar** - Sistem AI yang merekomendasikan HP berdasarkan preferensi dan budget kamu
+- **Filter Lengkap** - Cari HP berdasarkan harga, brand, RAM, storage, baterai, dan kamera
+- **Perbandingan HP** - Bandingkan spesifikasi hingga 3 HP sekaligus secara side-by-side
+- **Detail Lengkap** - Lihat spesifikasi lengkap dan harga setiap handphone
+- **Responsive Design** - Tampilan optimal di semua perangkat (desktop, tablet, mobile)
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **HTML5, CSS3, JavaScript (Vanilla)** - No framework, ringan dan cepat
+- **Fetch API** - Komunikasi dengan backend
+
+### Backend
+- **Python 3.10+** - Programming language
+- **FastAPI** - Modern web framework untuk REST API
+- **scikit-learn** - Machine learning library (Cosine Similarity)
+- **NumPy** - Numerical computing
+- **Uvicorn** - ASGI server
+
+### Algoritma
+- **Content-Based Filtering** - Rekomendasi berdasarkan kesamaan fitur HP
+- **Cosine Similarity** - Menghitung tingkat kemiripan antar HP (0-100%)
+- **Weighted Features** - Prioritas pada harga, RAM, storage, baterai, kamera
+
+---
+
+## 📁 Struktur Proyek
 
 ```
-frontend/
+sistem-rekomendasi-handphone/
+├── backend/                    # Backend API (Python + FastAPI)
+│   ├── app/
+│   │   ├── main.py            # FastAPI entry point
+│   │   ├── models.py          # Data models (Pydantic)
+│   │   ├── database.py        # JSON database handler
+│   │   ├── recommendation.py  # Algoritma Content-Based Filtering
+│   │   └── routes/
+│   │       └── phones.py      # API endpoints
+│   ├── data/
+│   │   └── phones.json        # Database HP (120+ phones)
+│   └── requirements.txt       # Python dependencies
 ├── css/
-│   └── style.css              # Main stylesheet
+│   └── style.css              # Stylesheet
 ├── js/
-│   ├── api.js                 # API communication layer
-│   ├── dummy-data.js          # Fallback data
+│   ├── api.js                 # API communication
 │   ├── main.js                # Homepage logic
-│   ├── mobile-menu.js         # Mobile navigation
-│   ├── typing-animation.js    # Hero typing effect
 │   ├── rekomendasi.js         # Recommendation page
 │   ├── compare.js             # Compare page
-│   ├── detail.js              # Detail page
-│   └── update-images.js       # Image URL handler
-├── images/                    # Image assets
+│   └── detail.js              # Detail page
+├── images/                    # Image assets (120+ HP photos)
 ├── index.html                 # Homepage
-├── rekomendasi.html           # Recommendation page
-├── compare.html               # Compare page
-├── detail.html                # Detail page
-└── test-integration.html      # Integration testing
+├── rekomendasi.html           # Halaman rekomendasi
+├── compare.html               # Halaman perbandingan
+└── detail.html                # Halaman detail HP
 ```
 
-## 🚀 Cara Menjalankan
+---
 
-### Opsi 1: Direct Open (Simple)
+## 🚀 Cara Install & Jalankan
+
+### 1️⃣ Clone Repository
 ```bash
-# Buka langsung di browser
-start index.html  # Windows
-open index.html   # macOS
+git clone https://github.com/cupen2004/sistem-rekomendasi-handphone.git
+cd sistem-rekomendasi-handphone
 ```
 
-### Opsi 2: Python HTTP Server
+### 2️⃣ Setup Backend (Python API)
+
+#### Install Dependencies
 ```bash
-# Di folder frontend
+cd backend
+pip install -r requirements.txt
+```
+
+#### Jalankan Server
+```bash
+uvicorn app.main:app --reload --host 0.0.0.0 --port 5000
+```
+
+Server akan running di: **http://localhost:5000**  
+API Docs (Swagger UI): **http://localhost:5000/docs**
+
+### 3️⃣ Setup Frontend
+
+Buka file HTML langsung di browser atau pakai HTTP server:
+
+#### Opsi A: Direct Open
+```bash
+# Buka index.html di browser
+start index.html        # Windows
+open index.html         # macOS
+```
+
+#### Opsi B: Python HTTP Server
+```bash
+# Di root folder proyek
 python -m http.server 8000
+```
+Akses di: **http://localhost:8000**
 
-# Akses di: http://localhost:8000
+#### Opsi C: VS Code Live Server
+1. Install extension **Live Server**
+2. Right-click `index.html` → **Open with Live Server**
+
+---
+
+## 📖 Cara Pakai
+
+### 1. Cari Rekomendasi HP
+1. Buka halaman **Rekomendasi**
+2. Atur filter:
+   - **Budget** (harga min-max)
+   - **Brand** (Samsung, iPhone, Xiaomi, dll) - opsional
+   - **RAM** minimal
+   - **Storage** minimal
+   - **Baterai** minimal
+   - **Kamera** minimal
+3. Klik **Cari HP Sekarang**
+4. Sistem akan tampilkan HP dengan **score similarity tertinggi**
+
+### 2. Bandingkan HP
+1. Buka halaman **Bandingkan**
+2. Pilih hingga 3 HP dari daftar
+3. Klik **Bandingkan Sekarang**
+4. Lihat perbandingan spesifikasi lengkap side-by-side
+
+### 3. Lihat Detail HP
+- Klik card HP mana saja untuk melihat detail lengkap
+
+---
+
+## 🔌 API Endpoints
+
+### 📱 Phones
+```
+GET  /api/phones              # Get all phones (dengan filter)
+GET  /api/phones/{id}         # Get phone by ID
+GET  /api/phones/search/{query}  # Search phones
 ```
 
-### Opsi 3: VS Code Live Server
-1. Install extension "Live Server"
-2. Right-click `index.html`
-3. Pilih "Open with Live Server"
-
-### Opsi 4: Node HTTP Server
-```bash
-# Install http-server globally
-npm install -g http-server
-
-# Run
-http-server -p 8000
+**Contoh dengan filter:**
+```
+GET /api/phones?min_price=2000000&max_price=5000000&min_ram=8
 ```
 
-## 🔌 Koneksi ke Backend
-
-Edit file `js/api.js` untuk mengatur URL backend:
-
-```javascript
-// Development (local)
-const API_URL = 'http://localhost:5000/api';
-
-// Production (deployed)
-const API_URL = 'https://your-backend-url.com/api';
+### 🎯 Recommendations
 ```
+POST /api/recommendations     # Get recommendations
+```
+
+**Request Body:**
+```json
+{
+  "min_price": 2000000,
+  "max_price": 5000000,
+  "min_ram": 8,
+  "min_storage": 128,
+  "min_battery": 5000,
+  "min_camera": 50,
+  "brand": "Samsung",
+  "limit": 10
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "phone": {
+        "id": "samsung-a55",
+        "name": "Samsung Galaxy A55 5G",
+        "price": 4299000,
+        "brand": "Samsung",
+        "specs": {
+          "ram": 8,
+          "storage": 256,
+          "battery": 5000,
+          "camera": 50
+        }
+      },
+      "score": 92.5,
+      "similarity": 87.3,
+      "match_reasons": [
+        "Harga sesuai budget Rp 2.000.000 - Rp 5.000.000",
+        "RAM 8GB memenuhi kebutuhan minimal",
+        "Baterai 5000mAh sangat awet"
+      ]
+    }
+  ],
+  "total": 1
+}
+```
+
+### 🏷️ Brands
+```
+GET  /api/brands              # Get all available brands
+```
+
+📚 **API Documentation Lengkap**: http://localhost:5000/docs (saat server running)
+
+---
+
+## 🧠 Cara Kerja Algoritma
+
+### Content-Based Filtering
+
+Sistem menggunakan **Cosine Similarity** untuk menghitung kesamaan antar HP:
+
+1. **Feature Extraction** - Ambil fitur numerik:
+   - Price (dinormalisasi)
+   - RAM (GB)
+   - Storage (GB)
+   - Battery (mAh)
+   - Camera (MP)
+   - Brand (one-hot encoding)
+
+2. **Feature Weighting** - Bobot kepentingan:
+   - 💰 Price: **30%**
+   - 🧠 RAM: **20%**
+   - 💾 Storage: **15%**
+   - 🔋 Battery: **15%**
+   - 📷 Camera: **10%**
+   - 🏷️ Brand: **10%**
+
+3. **Cosine Similarity** - Hitung kemiripan:
+   ```
+   similarity(A, B) = (A · B) / (||A|| × ||B||)
+   ```
+   Nilai: 0% (beda banget) hingga 100% (identik)
+
+4. **Scoring & Ranking** - Kombinasi similarity + kriteria match:
+   ```
+   final_score = (similarity × 0.7) + (criteria_match × 0.3)
+   ```
+
+5. **Hasil** - HP diurutkan berdasarkan score tertinggi
+
+---
 
 ## 🎨 Design System
 
 ### Color Palette
-```css
---primary: #6366f1        /* Indigo - primary actions */
---primary-light: #818cf8  /* Light indigo - hover states */
---surface: #1a1a2e        /* Dark blue - main background */
---card: #252541           /* Slate - card background */
---text: #e5e7eb           /* Light gray - main text */
---text-muted: #9ca3af     /* Gray - secondary text */
---border: #374151         /* Dark gray - borders */
---success: #10b981        /* Green - success states */
---error: #ef4444          /* Red - error states */
-```
+- **Primary**: `#6366f1` (Indigo)
+- **Background**: `#1a1a2e` (Dark Blue)
+- **Card**: `#252541` (Slate)
+- **Text**: `#e5e7eb` (Light Gray)
 
 ### Typography
 - **Font**: Inter, system-ui, sans-serif
-- **Body**: 14px / 1.6 line-height
-- **Headers**: 20px - 32px (responsive)
-- **Weights**: 400 (regular), 500 (medium), 600 (semibold)
-
-### Spacing Scale
-```css
---space-1: 0.25rem  /* 4px */
---space-2: 0.5rem   /* 8px */
---space-3: 0.75rem  /* 12px */
---space-4: 1rem     /* 16px */
---space-6: 1.5rem   /* 24px */
---space-8: 2rem     /* 32px */
-```
-
-### Border Radius
-```css
---radius-sm: 0.375rem   /* 6px - small elements */
---radius: 0.5rem        /* 8px - cards */
---radius-lg: 0.75rem    /* 12px - large cards */
---radius-full: 9999px   /* pills/circles */
-```
-
-## 📄 Halaman
-
-### 1. Homepage (`index.html`)
-- Hero section dengan typing animation
-- Feature cards
-- Latest phones grid
-- Script: `main.js`, `typing-animation.js`
-
-### 2. Rekomendasi (`rekomendasi.html`)
-- Filter form (budget, brand, specs)
-- Result grid dengan score
-- Empty state & loading state
-- Script: `rekomendasi.js`
-
-### 3. Compare (`compare.html`)
-- Phone selection (max 3)
-- Side-by-side comparison table
-- Highlight differences
-- Script: `compare.js`
-
-### 4. Detail (`detail.html`)
-- Full specifications
-- Image gallery
-- Price info
-- Similar phones
-- Script: `detail.js`
-
-### 5. Test Integration (`test-integration.html`)
-- API connectivity tests
-- Feature tests
-- Manual test suite
-- Useful untuk debugging
-
-## 🧩 JavaScript Modules
-
-### `api.js` - API Layer
-```javascript
-// Fetch all phones
-const phones = await fetchPhones();
-
-// Get phone by ID
-const phone = await fetchPhoneById('samsung-a55');
-
-// Search phones
-const results = await searchPhones('samsung');
-
-// Get recommendations
-const recommendations = await getRecommendations({
-  min_price: 2000000,
-  max_price: 5000000,
-  min_ram: 8
-});
-```
-
-### `dummy-data.js` - Fallback Data
-Digunakan jika backend tidak tersedia. Berisi sample data untuk development.
-
-### `mobile-menu.js` - Navigation
-Handle mobile menu toggle dan responsive navigation.
-
-### `update-images.js` - Image Handler
-Fallback untuk image yang gagal load.
-
-## 🎭 States & UI Feedback
-
-### Loading State
-```javascript
-showLoading(container);
-// Shows spinner with text
-```
-
-### Error State
-```javascript
-showError(container, message);
-// Shows error message with retry button
-```
-
-### Empty State
-```javascript
-showEmptyState(container, message);
-// Shows no results message
-```
-
-### Success State
-Tampilkan data dengan smooth transition.
-
-## ♿ Accessibility
-
-- ✅ Semantic HTML5 elements
-- ✅ ARIA labels untuk interactive elements
-- ✅ Keyboard navigation support (Tab, Enter, Escape)
-- ✅ Focus visible states
-- ✅ Color contrast WCAG AA compliant
-- ✅ Responsive touch targets (44px minimum)
-
-## 📱 Responsive Breakpoints
-
-```css
-/* Mobile first approach */
-@media (min-width: 640px) { }   /* sm: tablets */
-@media (min-width: 768px) { }   /* md: small laptops */
-@media (min-width: 1024px) { }  /* lg: desktops */
-@media (min-width: 1280px) { }  /* xl: large screens */
-```
-
-## 🧪 Testing
-
-### Manual Testing Checklist
-- [ ] Homepage loads dengan typing animation
-- [ ] Navigation links work
-- [ ] Mobile menu toggle
-- [ ] Filter form validation
-- [ ] Search functionality
-- [ ] Recommendation results
-- [ ] Compare selection (max 3)
-- [ ] Detail page display
-- [ ] Image fallback
-- [ ] Error handling
-- [ ] Loading states
-- [ ] Responsive pada mobile/tablet
-
-### Browser Compatibility
-- ✅ Chrome/Edge 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Mobile browsers
-
-## 🔧 Customization
-
-### Ubah Warna Tema
-Edit `css/style.css`:
-```css
-:root {
-  --primary: #your-color;
-  --surface: #your-background;
-}
-```
-
-### Tambah Halaman Baru
-1. Copy struktur HTML dari halaman existing
-2. Import CSS & JS modules yang dibutuhkan
-3. Tambah link di navigation
-
-### Modifikasi API Endpoint
-Edit `js/api.js` dan sesuaikan function yang dibutuhkan.
-
-## 🐛 Troubleshooting
-
-### CORS Error
-Backend harus enable CORS. Cek `backend/app/main.py`:
-```python
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-```
-
-### Image Not Loading
-Pastikan path image benar atau fallback image tersedia.
-
-### API Not Responding
-1. Cek backend sudah running di port 5000
-2. Cek URL di `js/api.js` sudah benar
-3. Lihat console untuk error details
-
-### Styling Tidak Apply
-1. Clear browser cache (Ctrl+Shift+R)
-2. Cek CSS file path di HTML
-3. Inspect element untuk debug specificity
-
-## 📝 Best Practices
-
-### Performance
-- ✅ Minimize DOM manipulation
-- ✅ Use event delegation
-- ✅ Lazy load images
-- ✅ Debounce search input
-
-### Code Quality
-- ✅ Use ES6+ features (const, let, arrow functions)
-- ✅ Async/await untuk asynchronous code
-- ✅ Descriptive variable names
-- ✅ Comment complex logic
-
-### Maintainability
-- ✅ Separate concerns (API, UI, logic)
-- ✅ Reusable functions
-- ✅ Consistent naming conventions
-- ✅ Keep functions small and focused
+- **Sizes**: 14px (body), 16px-32px (headings)
 
 ---
 
-Happy coding! 🚀
+## 📊 Data HP
+
+Database berisi **120+ handphone** dari berbagai brand:
+- 📱 Samsung (15 models)
+- 📱 Apple iPhone (8 models)
+- 📱 Xiaomi & Redmi (18 models)
+- 📱 OPPO (13 models)
+- 📱 Vivo (10 models)
+- 📱 Realme (11 models)
+- 📱 OnePlus (6 models)
+- 📱 POCO (3 models)
+- 📱 Infinix (8 models)
+- 📱 Tecno (7 models)
+- 📱 Google Pixel (5 models)
+- 📱 Nothing (4 models)
+- 📱 Motorola (4 models)
+- 📱 Sony Xperia (4 models)
+- 📱 ASUS ROG (4 models)
+- 📱 Honor (3 models)
+- 📱 Huawei (3 models)
+
+Range harga: **Rp 1.000.000 - Rp 30.000.000**
+
+---
+
+## 🧪 Testing
+
+### Manual Testing
+Buka `test-integration.html` di browser untuk menjalankan test suite:
+- ✅ API connectivity
+- ✅ Fetch phones
+- ✅ Search functionality
+- ✅ Recommendation algorithm
+- ✅ Filter application
+- ✅ Compare feature
+
+---
+
+## 📝 TODO / Future Improvements
+
+- [ ] Tambah filter processor & display size
+- [ ] User authentication & save preferences
+- [ ] Review & rating system
+- [ ] Price tracking & alert notification
+- [ ] Collaborative filtering algorithm
+- [ ] Mobile app version (React Native/Flutter)
+- [ ] Integrasi API harga real-time dari marketplace
+
+---
+
+## 🤝 Contributing
+
+Contributions welcome! Buat Pull Request atau buka Issue untuk bug reports dan feature requests.
+
+---
+
+## 👨‍💻 Author
+
+**PhoneRec - Sistem Rekomendasi Handphone**  
+Proyek Tugas Semester 5
+
+---
+
+## 📄 License
+
+Proyek ini dibuat untuk keperluan akademik.
+
+---
+
+## 🙏 Acknowledgments
+
+- FastAPI Documentation
+- scikit-learn Documentation
+- MDN Web Docs
+- Inspiration dari berbagai sistem rekomendasi e-commerce
+
+---
+
+⭐ **Star repo ini jika bermanfaat!**
