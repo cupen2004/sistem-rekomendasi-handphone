@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhoneRec - Rekomendasi HP Terbaik</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <span class="logo-text">PhoneRec</span>
+        </a>
+        
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="rekomendasi.html">Rekomendasi</a>
+          <a href="compare.html">Bandingkan</a>
+        </nav>
+        
+        <button class="nav-mobile">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>
+          <span class="typing-line-1"></span>
+          <br>
+          <span class="typing-line-2"></span>
+        </h1>
+
+        <p>
+          Bingung pilih HP? Kami bantu carikan HP yang paling cocok dengan 
+          budget dan kebutuhan kamu dalam hitungan detik.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="rekomendasi.html" class="btn btn-primary">
+            Mulai Cari HP
+          </a>
+          <a href="compare.html" class="btn btn-outline">
+            Bandingkan HP
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">Mudah</div>
+            <div class="hero-stat-label">Atur Budget Aja</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">Akurat</div>
+            <div class="hero-stat-label">Data Update</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">Gratis</div>
+            <div class="hero-stat-label">100% Free</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Kenapa Pilih Kami?</h2>
+        <p class="section-subtitle">Cari HP jadi lebih mudah dan cepat</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="card feature-card">
+          <h3 class="feature-title">Rekomendasi Pintar</h3>
+          <p class="feature-description">
+            Kami carikan HP yang paling cocok dengan budget dan kebutuhan kamu secara otomatis
+          </p>
+        </div>
+
+        <div class="card feature-card">
+          <h3 class="feature-title">Filter Lengkap</h3>
+          <p class="feature-description">
+            Cari berdasarkan harga, merek, RAM, memori, kamera, dan baterai
+          </p>
+        </div>
+
+        <div class="card feature-card">
+          <h3 class="feature-title">Harga Terbaru</h3>
+          <p class="feature-description">
+            Data spesifikasi lengkap dan harga update dari marketplace terpercaya
+          </p>
+        </div>
+      </div>
+
+      <!-- Latest Phones -->
+      <div class="phones-section">
+        <div class="phones-header">
+          <h2 class="section-title">HP Terbaru</h2>
+          <a href="rekomendasi.html" class="btn btn-outline btn-sm">
+            Lihat Semua →
+          </a>
+        </div>
+
+        <div id="phones-loading" class="loading">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Memuat data...</div>
+        </div>
+
+        <div id="phones-error" class="error" style="display: none;"></div>
+
+        <div id="phones-list" class="phones-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 PhoneRec. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/dummy-data.js"></script>
+  <script src="js/update-images.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/typing-animation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

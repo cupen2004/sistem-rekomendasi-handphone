@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekomendasi HP - PhoneRec</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <span class="logo-text">PhoneRec</span>
+        </a>
+        
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="rekomendasi.html">Rekomendasi</a>
+          <a href="compare.html">Bandingkan</a>
+        </nav>
+        
+        <button class="nav-mobile">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="padding: 2rem 1rem;">
+    <h1 class="section-title">Rekomendasi HP</h1>
+    <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
+      Filter HP sesuai kebutuhan dan budget kamu
+    </p>
+
+    <!-- Filter Panel -->
+    <div class="filter-panel">
+      <h2 class="filter-title">Filter</h2>
+      
+      <form id="filter-form">
+        <!-- Price Range -->
+        <div class="filter-group">
+          <label class="filter-label">Budget (Rp)</label>
+          <div class="filter-range">
+            <input 
+              type="number" 
+              id="min-price" 
+              class="filter-input" 
+              placeholder="Min"
+              min="0"
+            >
+            <span class="filter-separator">-</span>
+            <input 
+              type="number" 
+              id="max-price" 
+              class="filter-input" 
+              placeholder="Max"
+              min="0"
+            >
+          </div>
+        </div>
+
+        <!-- Brand -->
+        <div class="filter-group">
+          <label class="filter-label" for="brand">Merek</label>
+          <select id="brand" class="filter-select">
+            <option value="">Semua Merek</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Apple">Apple</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="Oppo">Oppo</option>
+            <option value="Vivo">Vivo</option>
+            <option value="Realme">Realme</option>
+            <option value="Infinix">Infinix</option>
+            <option value="Poco">Poco</option>
+          </select>
+        </div>
+
+        <!-- RAM -->
+        <div class="filter-group">
+          <label class="filter-label" for="min-ram">RAM Minimal (GB)</label>
+          <select id="min-ram" class="filter-select">
+            <option value="">Semua</option>
+            <option value="2">2 GB</option>
+            <option value="3">3 GB</option>
+            <option value="4">4 GB</option>
+            <option value="6">6 GB</option>
+            <option value="8">8 GB</option>
+            <option value="12">12 GB</option>
+            <option value="16">16 GB</option>
+          </select>
+        </div>
+
+        <!-- Storage -->
+        <div class="filter-group">
+          <label class="filter-label" for="min-storage">Memori Minimal (GB)</label>
+          <select id="min-storage" class="filter-select">
+            <option value="">Semua</option>
+            <option value="32">32 GB</option>
+            <option value="64">64 GB</option>
+            <option value="128">128 GB</option>
+            <option value="256">256 GB</option>
+            <option value="512">512 GB</option>
+            <option value="1024">1 TB</option>
+          </select>
+        </div>
+
+        <!-- Battery -->
+        <div class="filter-group">
+          <label class="filter-label" for="min-battery">Baterai Minimal (mAh)</label>
+          <select id="min-battery" class="filter-select">
+            <option value="">Semua</option>
+            <option value="3000">3000 mAh</option>
+            <option value="4000">4000 mAh</option>
+            <option value="5000">5000 mAh</option>
+            <option value="6000">6000 mAh</option>
+          </select>
+        </div>
+
+        <!-- Camera -->
+        <div class="filter-group">
+          <label class="filter-label" for="min-camera">Kamera Minimal (MP)</label>
+          <select id="min-camera" class="filter-select">
+            <option value="">Semua</option>
+            <option value="12">12 MP</option>
+            <option value="24">24 MP</option>
+            <option value="48">48 MP</option>
+            <option value="64">64 MP</option>
+            <option value="108">108 MP</option>
+          </select>
+        </div>
+
+        <!-- Actions -->
+        <div class="filter-actions">
+          <button type="submit" class="btn btn-primary">Terapkan Filter</button>
+          <button type="button" id="reset-btn" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Results -->
+    <div id="results-loading" class="loading" style="display: none;">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Mencari HP terbaik untuk kamu...</div>
+    </div>
+
+    <div id="results-error" class="error" style="display: none;"></div>
+
+    <div id="results-section" style="display: none;">
+      <div class="phones-header">
+        <h2 class="section-title" id="results-title">Hasil Rekomendasi</h2>
+        <div id="results-count" style="color: var(--gray-400);"></div>
+      </div>
+      <div id="results-list" class="phones-grid"></div>
+    </div>
+
+    <div id="initial-state" class="empty">
+      <div class="empty-icon">🔍</div>
+      <p>Atur filter di atas untuk mencari HP yang sesuai dengan kebutuhan kamu</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 PhoneRec. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/dummy-data.js"></script>
+  <script src="js/update-images.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/rekomendasi.js"></script>
+</body>
+</html>

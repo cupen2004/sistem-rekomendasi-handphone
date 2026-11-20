@@ -1,0 +1,166 @@
+# DAFTAR FOTO HP YANG PERLU DIDOWNLOAD
+# Total: 110 foto
+# Simpan semua foto ke folder: frontend/images/phones/
+
+## CARA DOWNLOAD CEPAT:
+## 1. Buka Google Images
+## 2. Search: "[Nama HP] official"
+## 3. Download foto pertama yang bagus
+## 4. Rename sesuai nama di bawah
+## 5. Pindahkan ke folder frontend/images/phones/
+
+## SAMSUNG (10 HP)
+1. samsung-s24-ultra.jpg          - Samsung Galaxy S24 Ultra
+2. samsung-s24-plus.jpg           - Samsung Galaxy S24+
+3. samsung-s24.jpg                - Samsung Galaxy S24
+4. samsung-z-fold6.jpg            - Samsung Galaxy Z Fold6
+5. samsung-z-flip6.jpg            - Samsung Galaxy Z Flip6
+6. samsung-a55.jpg                - Samsung Galaxy A55
+7. samsung-a35.jpg                - Samsung Galaxy A35
+8. samsung-a25.jpg                - Samsung Galaxy A25
+9. samsung-a15.jpg                - Samsung Galaxy A15
+10. samsung-m55.jpg               - Samsung Galaxy M55
+
+## APPLE (8 HP)
+11. iphone-16-pro-max.jpg         - iPhone 16 Pro Max
+12. iphone-16-pro.jpg             - iPhone 16 Pro
+13. iphone-16-plus.jpg            - iPhone 16 Plus
+14. iphone-16.jpg                 - iPhone 16
+15. iphone-15-pro-max.jpg         - iPhone 15 Pro Max
+16. iphone-15.jpg                 - iPhone 15
+17. iphone-14.jpg                 - iPhone 14
+18. iphone-se-2024.jpg            - iPhone SE 2024
+
+## XIAOMI (10 HP)
+19. xiaomi-14-ultra.jpg           - Xiaomi 14 Ultra
+20. xiaomi-14.jpg                 - Xiaomi 14
+21. xiaomi-14t-pro.jpg            - Xiaomi 14T Pro
+22. xiaomi-14t.jpg                - Xiaomi 14T
+23. redmi-note-14-pro-plus.jpg    - Redmi Note 14 Pro+
+24. redmi-note-14-pro.jpg         - Redmi Note 14 Pro
+25. redmi-note-14.jpg             - Redmi Note 14
+26. redmi-14c.jpg                 - Redmi 14C
+27. poco-f6-pro.jpg               - Poco F6 Pro
+28. poco-x6-pro.jpg               - Poco X6 Pro
+
+## OPPO (8 HP)
+29. oppo-find-x8-pro.jpg          - Oppo Find X8 Pro
+30. oppo-find-x8.jpg              - Oppo Find X8
+31. oppo-reno-12-pro.jpg          - Oppo Reno 12 Pro
+32. oppo-reno-12.jpg              - Oppo Reno 12
+33. oppo-a80.jpg                  - Oppo A80
+34. oppo-a60.jpg                  - Oppo A60
+35. oppo-a38.jpg                  - Oppo A38
+36. oppo-a18.jpg                  - Oppo A18
+
+## VIVO (7 HP)
+37. vivo-x200-pro.jpg             - Vivo X200 Pro
+38. vivo-v40-pro.jpg              - Vivo V40 Pro
+39. vivo-v40.jpg                  - Vivo V40
+40. vivo-v30-pro.jpg              - Vivo V30 Pro
+41. vivo-y38.jpg                  - Vivo Y38
+42. vivo-y28.jpg                  - Vivo Y28
+43. vivo-y18.jpg                  - Vivo Y18
+
+## REALME (8 HP)
+44. realme-gt-7-pro.jpg           - Realme GT 7 Pro
+45. realme-gt-6.jpg               - Realme GT 6
+46. realme-13-pro-plus.jpg        - Realme 13 Pro+
+47. realme-13-pro.jpg             - Realme 13 Pro
+48. realme-13-plus.jpg            - Realme 13+
+49. realme-c65.jpg                - Realme C65
+50. realme-c55.jpg                - Realme C55
+51. realme-narzo-70-pro.jpg       - Realme Narzo 70 Pro
+
+## ONEPLUS (4 HP)
+52. oneplus-13.jpg                - OnePlus 13
+53. oneplus-12.jpg                - OnePlus 12
+54. oneplus-nord-ce-4.jpg         - OnePlus Nord CE 4
+55. oneplus-nord-4.jpg            - OnePlus Nord 4
+
+## INFINIX (5 HP)
+56. infinix-gt-20-pro.jpg         - Infinix GT 20 Pro
+57. infinix-note-40-pro-plus.jpg  - Infinix Note 40 Pro+
+58. infinix-note-40-pro.jpg       - Infinix Note 40 Pro
+59. infinix-hot-50-pro-plus.jpg   - Infinix Hot 50 Pro+
+60. infinix-smart-8-pro.jpg       - Infinix Smart 8 Pro
+
+## TECNO (4 HP)
+61. tecno-phantom-x3-pro.jpg      - Tecno Phantom X3 Pro
+62. tecno-camon-30-premier.jpg    - Tecno Camon 30 Premier
+63. tecno-spark-20-pro-plus.jpg   - Tecno Spark 20 Pro+
+64. tecno-pova-6-pro.jpg          - Tecno Pova 6 Pro
+
+## ASUS (3 HP)
+65. asus-rog-phone-8-pro.jpg      - Asus ROG Phone 8 Pro
+66. asus-zenfone-11-ultra.jpg     - Asus Zenfone 11 Ultra
+67. asus-rog-phone-7.jpg          - Asus ROG Phone 7
+
+## GOOGLE PIXEL (4 HP)
+68. pixel-9-pro-xl.jpg            - Google Pixel 9 Pro XL
+69. pixel-9-pro.jpg               - Google Pixel 9 Pro
+70. pixel-9.jpg                   - Google Pixel 9
+71. pixel-8a.jpg                  - Google Pixel 8a
+
+## NOTHING (3 HP)
+72. nothing-phone-2a-plus.jpg     - Nothing Phone (2a) Plus
+73. nothing-phone-2a.jpg          - Nothing Phone (2a)
+74. nothing-phone-2.jpg           - Nothing Phone (2)
+
+## SONY (3 HP)
+75. sony-xperia-1-vi.jpg          - Sony Xperia 1 VI
+76. sony-xperia-5-vi.jpg          - Sony Xperia 5 VI
+77. sony-xperia-10-vi.jpg         - Sony Xperia 10 VI
+
+## MOTOROLA (3 HP)
+78. motorola-edge-50-ultra.jpg    - Motorola Edge 50 Ultra
+79. motorola-edge-50-pro.jpg      - Motorola Edge 50 Pro
+80. motorola-moto-g85.jpg         - Motorola Moto G85
+
+## HUAWEI (3 HP)
+81. huawei-pura-70-ultra.jpg      - Huawei Pura 70 Ultra
+82. huawei-nova-12-pro.jpg        - Huawei Nova 12 Pro
+83. huawei-nova-y92.jpg           - Huawei Nova Y92
+
+## HONOR (3 HP)
+84. honor-magic-6-pro.jpg         - Honor Magic 6 Pro
+85. honor-x9c.jpg                 - Honor X9c
+86. honor-x8c.jpg                 - Honor X8c
+
+## ADDITIONAL (24 HP)
+87. samsung-f15.jpg               - Samsung Galaxy F15
+88. xiaomi-13t.jpg                - Xiaomi 13T
+89. poco-m6-pro.jpg               - Poco M6 Pro
+90. vivo-t3-pro.jpg               - Vivo T3 Pro
+91. oppo-f27-pro-plus.jpg         - Oppo F27 Pro+
+92. realme-p2-pro.jpg             - Realme P2 Pro
+93. infinix-zero-40.jpg           - Infinix Zero 40
+94. tecno-camon-20-premier.jpg    - Tecno Camon 20 Premier
+95. oneplus-nord-ce-3.jpg         - OnePlus Nord CE 3
+96. asus-rog-phone-8.jpg          - Asus ROG Phone 8
+97. nothing-phone-1.jpg           - Nothing Phone (1)
+98. motorola-moto-g54.jpg         - Motorola Moto G54
+99. sony-xperia-1-v.jpg           - Sony Xperia 1 V
+100. pixel-8-pro.jpg              - Google Pixel 8 Pro
+101. infinix-hot-40-pro.jpg       - Infinix Hot 40 Pro
+102. tecno-spark-10-pro.jpg       - Tecno Spark 10 Pro
+103. realme-c67.jpg               - Realme C67
+104. vivo-y17s.jpg                - Vivo Y17s
+105. samsung-a05s.jpg             - Samsung Galaxy A05s
+106. oppo-a17k.jpg                - Oppo A17k
+107. redmi-a3.jpg                 - Redmi A3
+108. infinix-smart-8.jpg          - Infinix Smart 8
+109. tecno-pop-8.jpg              - Tecno Pop 8
+110. realme-c30s.jpg              - Realme C30s
+
+## TIPS DOWNLOAD CEPAT:
+- Prioritas: Download HP populer dulu (Samsung, iPhone, Xiaomi flagship)
+- Ukuran foto: 400x400px atau lebih besar
+- Format: JPG atau PNG (rename jadi .jpg)
+- Sumber: Google Images / GSMArena / official website brand
+- Kalau ga ketemu foto: skip dulu, nanti pakai icon emoji
+
+## SETELAH DOWNLOAD:
+1. Pastikan semua foto ada di folder: frontend/images/phones/
+2. Refresh browser (Ctrl + Shift + R)
+3. Foto HP akan muncul otomatis!

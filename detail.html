@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail HP - PhoneRec</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <span class="logo-text">PhoneRec</span>
+        </a>
+        
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="rekomendasi.html">Rekomendasi</a>
+          <a href="compare.html">Bandingkan</a>
+        </nav>
+        
+        <button class="nav-mobile">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="detail-page">
+    <div class="container">
+      <a href="rekomendasi.html" class="back-link">← Kembali</a>
+
+      <div id="detail-loading" class="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Memuat detail HP...</div>
+      </div>
+
+      <div id="detail-error" class="error" style="display: none;"></div>
+
+      <div id="detail-content" style="display: none;">
+        <div class="detail-grid">
+          <!-- Left Column: Image and Price -->
+          <div>
+            <div class="card detail-image-card">
+              <div class="detail-image" id="phone-image">
+                <div class="detail-image-placeholder">📱</div>
+              </div>
+
+              <h1 class="detail-title" id="phone-title">-</h1>
+              <div class="detail-price" id="phone-price">-</div>
+            </div>
+          </div>
+
+          <!-- Right Column: Specs -->
+          <div>
+            <div class="card specs-card">
+              <h2 class="specs-title">Spesifikasi</h2>
+
+              <div class="specs-grid">
+                <div class="spec-row">
+                  <div class="spec-item">
+                    <div class="spec-label">Processor</div>
+                    <div class="spec-value" id="spec-chipset">-</div>
+                  </div>
+                  <div class="spec-item">
+                    <div class="spec-label">OS</div>
+                    <div class="spec-value" id="spec-os">-</div>
+                  </div>
+                </div>
+
+                <div class="spec-row">
+                  <div class="spec-item">
+                    <div class="spec-label">🧠 RAM</div>
+                    <div class="spec-value-highlight" id="spec-ram">-</div>
+                  </div>
+                  <div class="spec-item">
+                    <div class="spec-label">💾 Storage</div>
+                    <div class="spec-value-highlight" id="spec-storage">-</div>
+                  </div>
+                </div>
+
+                <div class="spec-row">
+                  <div class="spec-item">
+                    <div class="spec-label">📷 Kamera Utama</div>
+                    <div class="spec-value-highlight" id="spec-camera-main">-</div>
+                  </div>
+                  <div class="spec-item">
+                    <div class="spec-label">🤳 Kamera Depan</div>
+                    <div class="spec-value-highlight" id="spec-camera-front">-</div>
+                  </div>
+                </div>
+
+                <div class="spec-row">
+                  <div class="spec-item">
+                    <div class="spec-label">🔋 Battery</div>
+                    <div class="spec-value-highlight" id="spec-battery">-</div>
+                  </div>
+                  <div class="spec-item">
+                    <div class="spec-label">📺 Display</div>
+                    <div class="spec-value" id="spec-display">-</div>
+                  </div>
+                </div>
+
+                <div class="spec-row" id="release-row" style="display: none;">
+                  <div class="spec-item">
+                    <div class="spec-label">📅 Tanggal Rilis</div>
+                    <div class="spec-value" id="spec-release">-</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Score Card (if available) -->
+            <div id="score-card" class="card" style="display: none; margin-top: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05)); border-color: var(--primary-600);">
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <h2 class="specs-title" style="margin: 0;">Detail Skor Rekomendasi</h2>
+                <span style="font-size: 0.75rem; color: var(--gray-400);">(Semakin tinggi semakin bagus)</span>
+              </div>
+              
+              <div id="score-details"></div>
+
+              <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--dark-700);">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 1.25rem; font-weight: bold; color: white;">Skor Total</span>
+                  <span id="total-score" style="font-size: 2rem; font-weight: bold; color: var(--primary-500);">-</span>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--gray-400); margin-top: 0.5rem;">
+                  Skor dihitung otomatis berdasarkan perbandingan spesifikasi dengan HP lain
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 PhoneRec. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/dummy-data.js"></script>
+  <script src="js/update-images.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>
