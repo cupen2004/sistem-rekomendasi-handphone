@@ -1171,13 +1171,13 @@ input:-ms-input-placeholder {
   }
 }
 
-/* Dropdown Autocomplete Styles */
+/* Dropdown Autocomplete Styles - Basic positioning only, colors set in JavaScript */
 .datalist-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  background-color: #ffffff !important;
+  background-color: #ffffff;
   border: 1px solid var(--border-medium);
   border-radius: 0.5rem;
   margin-top: 0.25rem;
@@ -1193,28 +1193,23 @@ input:-ms-input-placeholder {
   cursor: pointer;
   border-bottom: 1px solid var(--border-light);
   transition: background-color 0.2s;
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
 
 .datalist-option:hover {
-  background-color: #f8f9fa !important;
+  background-color: #f8f9fa;
 }
 
 .datalist-option:last-child {
   border-bottom: none;
 }
 
-.datalist-option .option-name,
 .option-name {
-  color: #000000 !important;
-  font-weight: 500 !important;
+  font-weight: 500;
   margin-bottom: 0.25rem;
-  display: block !important;
 }
 
-.datalist-option .option-price,
 .option-price {
-  color: #666666 !important;
-  font-size: 0.875rem !important;
-  display: block !important;
+  font-size: 0.875rem;
 }
+
