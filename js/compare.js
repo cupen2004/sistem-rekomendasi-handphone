@@ -47,9 +47,11 @@ function setupSearchInputs() {
           option.addEventListener('click', () => {
             const phoneId = parseInt(option.dataset.phoneId);
             const index = parseInt(option.dataset.index);
+            const phoneName = option.querySelector('.option-name').textContent;
             selectPhone(phoneId, index);
             dropdown.style.display = 'none';
-            input.value = '';
+            input.value = phoneName; // Set nama HP ke input box
+            input.setAttribute('data-selected-id', phoneId); // Simpan ID
           });
         });
       } else {
