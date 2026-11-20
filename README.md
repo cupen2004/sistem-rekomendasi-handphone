@@ -37,7 +37,7 @@ Aplikasi web untuk memberikan rekomendasi handphone yang sesuai dengan budget da
 ## 📁 Struktur Proyek
 
 ```
-SEMESTER 5/Sistem Rekomendasi Handphone/
+sistem-rekomendasi-handphone/
 ├── backend/                    # Backend API (Python + FastAPI)
 │   ├── app/
 │   │   ├── __init__.py
@@ -54,24 +54,29 @@ SEMESTER 5/Sistem Rekomendasi Handphone/
 │   │   └── phones.json        # Database HP
 │   ├── requirements.txt       # Python dependencies
 │   └── README.md              # Backend documentation
-├── css/
-│   └── style.css              # Main stylesheet
-├── js/
-│   ├── api.js                 # API communication layer
-│   ├── dummy-data.js          # Fallback data
-│   ├── main.js                # Homepage logic
-│   ├── mobile-menu.js         # Mobile navigation
-│   ├── typing-animation.js    # Hero typing effect
-│   ├── rekomendasi.js         # Recommendation page
-│   ├── compare.js             # Compare page
-│   ├── detail.js              # Detail page
-│   └── update-images.js       # Image URL handler
-├── images/                    # Image assets
-├── index.html                 # Homepage
-├── rekomendasi.html           # Recommendation page
-├── compare.html               # Compare page
-├── detail.html                # Detail page
-├── test-integration.html      # Integration testing
+├── frontend/                   # Frontend Web App
+│   ├── css/
+│   │   └── style.css          # Main stylesheet
+│   ├── js/
+│   │   ├── api.js             # API communication layer
+│   │   ├── dummy-data.js      # Fallback data
+│   │   ├── main.js            # Homepage logic
+│   │   ├── mobile-menu.js     # Mobile navigation
+│   │   ├── typing-animation.js # Hero typing effect
+│   │   ├── rekomendasi.js     # Recommendation page
+│   │   ├── compare.js         # Compare page
+│   │   ├── detail.js          # Detail page
+│   │   └── update-images.js   # Image URL handler
+│   ├── images/                # Image assets
+│   ├── index.html             # Homepage
+│   ├── rekomendasi.html       # Recommendation page
+│   ├── compare.html           # Compare page
+│   ├── detail.html            # Detail page
+│   ├── test-integration.html  # Integration testing
+│   └── README.md              # Frontend documentation
+├── .gitignore                 # Git ignore rules
+├── CONTRIBUTING.md            # Contribution guidelines
+├── LICENSE                    # MIT License
 └── README.md                  # This file
 ```
 
@@ -84,8 +89,8 @@ SEMESTER 5/Sistem Rekomendasi Handphone/
 
 ### 1. Clone Repository
 ```bash
-git clone <repository-url>
-cd "SEMESTER 5/Sistem Rekomendasi Handphone"
+git clone https://github.com/cupen2004/sistem-rekomendasi-handphone.git
+cd sistem-rekomendasi-handphone
 ```
 
 ### 2. Setup Backend
@@ -115,6 +120,7 @@ Buka file HTML langsung di browser atau gunakan live server:
 
 #### Opsi 1: Direct Open
 ```bash
+cd frontend
 # Buka index.html di browser
 start index.html  # Windows
 open index.html   # macOS
@@ -123,7 +129,8 @@ xdg-open index.html  # Linux
 
 #### Opsi 2: Python HTTP Server
 ```bash
-# Di root folder proyek
+# Di folder frontend
+cd frontend
 python -m http.server 8000
 ```
 
@@ -131,7 +138,7 @@ Akses di: **http://localhost:8000**
 
 #### Opsi 3: VS Code Live Server
 1. Install extension "Live Server"
-2. Right-click `index.html` → "Open with Live Server"
+2. Right-click `frontend/index.html` → "Open with Live Server"
 
 ### 4. Testing
 ```bash
