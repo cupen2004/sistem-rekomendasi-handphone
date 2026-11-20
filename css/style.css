@@ -807,7 +807,8 @@ body {
 }
 
 .filter-input::placeholder {
-  color: var(--text-tertiary);
+  color: #6c757d;
+  opacity: 1;
 }
 
 .filter-range {
