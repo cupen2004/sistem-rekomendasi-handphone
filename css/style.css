@@ -806,9 +806,33 @@ body {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
-.filter-input::placeholder {
-  color: #6c757d;
-  opacity: 1;
+.filter-input::placeholder,
+.filter-select::placeholder,
+input::placeholder,
+select::placeholder {
+  color: #495057 !important;
+  opacity: 1 !important;
+}
+
+.filter-input::-webkit-input-placeholder,
+.filter-select::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+  color: #495057 !important;
+  opacity: 1 !important;
+}
+
+.filter-input::-moz-placeholder,
+.filter-select::-moz-placeholder,
+input::-moz-placeholder {
+  color: #495057 !important;
+  opacity: 1 !important;
+}
+
+.filter-input:-ms-input-placeholder,
+.filter-select:-ms-input-placeholder,
+input:-ms-input-placeholder {
+  color: #495057 !important;
+  opacity: 1 !important;
 }
 
 .filter-range {
