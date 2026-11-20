@@ -2,7 +2,8 @@
 
 Aplikasi web untuk memberikan rekomendasi handphone yang sesuai dengan budget dan kebutuhan pengguna menggunakan algoritma **Content-Based Filtering** dengan **Cosine Similarity**.
 
-🌐 **Live Demo**: [cupen2004.github.io/sistem-rekomendasi-handphone](https://cupen2004.github.io/sistem-rekomendasi-handphone/)
+🔗 **GitHub Repo**: [github.com/cupen2004/sistem-rekomendasi-handphone](https://github.com/cupen2004/sistem-rekomendasi-handphone)  
+🌐 **Live Website**: [cupen2004.github.io/sistem-rekomendasi-handphone](https://cupen2004.github.io/sistem-rekomendasi-handphone/)
 
 ---
 
