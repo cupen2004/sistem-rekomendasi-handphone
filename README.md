@@ -1,347 +1,305 @@
-# 📱 PhoneRec - Sistem Rekomendasi Handphone
+# 🎨 PhoneRec Frontend
 
-Aplikasi web untuk memberikan rekomendasi handphone yang sesuai dengan budget dan kebutuhan pengguna menggunakan algoritma **Content-Based Filtering**.
+Frontend aplikasi PhoneRec menggunakan **Vanilla JavaScript**, **HTML5**, dan **CSS3** tanpa framework. Ringan, cepat, dan mudah dikustomisasi.
 
-![Status](https://img.shields.io/badge/status-active-success.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
-## 🎯 Fitur Utama
-
-- **Rekomendasi Pintar** - Sistem rekomendasi berbasis Content-Based Filtering dengan Cosine Similarity
-- **Filter Lengkap** - Filter berdasarkan harga, brand, RAM, storage, baterai, dan kamera
-- **Perbandingan HP** - Bandingkan spesifikasi hingga 3 HP sekaligus
-- **Detail Lengkap** - Informasi spesifikasi lengkap setiap handphone
-- **Responsive Design** - Tampilan optimal di desktop, tablet, dan mobile
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **HTML5** - Struktur halaman
-- **CSS3** - Styling dengan custom properties dan animations
-- **Vanilla JavaScript** - Interaktivitas tanpa framework
-- **Fetch API** - Komunikasi dengan backend
-
-### Backend
-- **Python 3.10+** - Programming language
-- **FastAPI** - Modern web framework
-- **scikit-learn** - Machine learning library (Cosine Similarity)
-- **NumPy** - Numerical computing
-- **Pydantic** - Data validation
-- **Uvicorn** - ASGI server
-
-### Algoritma
-- **Content-Based Filtering** - Rekomendasi berdasarkan kesamaan fitur
-- **Cosine Similarity** - Menghitung similarity antar HP
-- **Feature Weighting** - Bobot pada fitur penting (price, RAM, storage, battery, camera)
-
-## 📁 Struktur Proyek
+## 📁 Struktur Folder
 
 ```
-sistem-rekomendasi-handphone/
-├── backend/                    # Backend API (Python + FastAPI)
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── main.py            # Entry point FastAPI
-│   │   ├── models.py          # Pydantic models
-│   │   ├── database.py        # JSON database handler
-│   │   ├── recommendation.py  # Content-Based Filtering logic
-│   │   └── routes/
-│   │       ├── __init__.py
-│   │       └── phones.py      # API endpoints
-│   ├── api/
-│   │   └── index.py           # Vercel serverless entry
-│   ├── data/
-│   │   └── phones.json        # Database HP
-│   ├── requirements.txt       # Python dependencies
-│   └── README.md              # Backend documentation
-├── frontend/                   # Frontend Web App
-│   ├── css/
-│   │   └── style.css          # Main stylesheet
-│   ├── js/
-│   │   ├── api.js             # API communication layer
-│   │   ├── dummy-data.js      # Fallback data
-│   │   ├── main.js            # Homepage logic
-│   │   ├── mobile-menu.js     # Mobile navigation
-│   │   ├── typing-animation.js # Hero typing effect
-│   │   ├── rekomendasi.js     # Recommendation page
-│   │   ├── compare.js         # Compare page
-│   │   ├── detail.js          # Detail page
-│   │   └── update-images.js   # Image URL handler
-│   ├── images/                # Image assets
-│   ├── index.html             # Homepage
-│   ├── rekomendasi.html       # Recommendation page
-│   ├── compare.html           # Compare page
-│   ├── detail.html            # Detail page
-│   ├── test-integration.html  # Integration testing
-│   └── README.md              # Frontend documentation
-├── .gitignore                 # Git ignore rules
-├── CONTRIBUTING.md            # Contribution guidelines
-├── LICENSE                    # MIT License
-└── README.md                  # This file
+frontend/
+├── css/
+│   └── style.css              # Main stylesheet
+├── js/
+│   ├── api.js                 # API communication layer
+│   ├── dummy-data.js          # Fallback data
+│   ├── main.js                # Homepage logic
+│   ├── mobile-menu.js         # Mobile navigation
+│   ├── typing-animation.js    # Hero typing effect
+│   ├── rekomendasi.js         # Recommendation page
+│   ├── compare.js             # Compare page
+│   ├── detail.js              # Detail page
+│   └── update-images.js       # Image URL handler
+├── images/                    # Image assets
+├── index.html                 # Homepage
+├── rekomendasi.html           # Recommendation page
+├── compare.html               # Compare page
+├── detail.html                # Detail page
+└── test-integration.html      # Integration testing
 ```
 
-## 🚀 Cara Install & Run
+## 🚀 Cara Menjalankan
 
-### Prerequisites
-- **Python 3.10+** ([Download](https://www.python.org/downloads/))
-- **pip** (biasanya sudah include dengan Python)
-- **Browser modern** (Chrome, Firefox, Edge, Safari)
-
-### 1. Clone Repository
+### Opsi 1: Direct Open (Simple)
 ```bash
-git clone https://github.com/cupen2004/sistem-rekomendasi-handphone.git
-cd sistem-rekomendasi-handphone
-```
-
-### 2. Setup Backend
-
-#### Install Dependencies
-```bash
-cd backend
-pip install -r requirements.txt
-```
-
-#### Run Server
-```bash
-# Development mode dengan auto-reload
-uvicorn app.main:app --reload --host 0.0.0.0 --port 5000
-
-# Atau
-python -m app.main
-```
-
-Server akan berjalan di: **http://localhost:5000**
-
-API Documentation: **http://localhost:5000/docs**
-
-### 3. Setup Frontend
-
-Buka file HTML langsung di browser atau gunakan live server:
-
-#### Opsi 1: Direct Open
-```bash
-cd frontend
-# Buka index.html di browser
+# Buka langsung di browser
 start index.html  # Windows
 open index.html   # macOS
-xdg-open index.html  # Linux
 ```
 
-#### Opsi 2: Python HTTP Server
+### Opsi 2: Python HTTP Server
 ```bash
 # Di folder frontend
-cd frontend
 python -m http.server 8000
+
+# Akses di: http://localhost:8000
 ```
 
-Akses di: **http://localhost:8000**
-
-#### Opsi 3: VS Code Live Server
+### Opsi 3: VS Code Live Server
 1. Install extension "Live Server"
-2. Right-click `frontend/index.html` → "Open with Live Server"
+2. Right-click `index.html`
+3. Pilih "Open with Live Server"
 
-### 4. Testing
+### Opsi 4: Node HTTP Server
 ```bash
-# Test backend API
-python backend/test_backend.py
+# Install http-server globally
+npm install -g http-server
 
-# Test integration frontend-backend
-# Buka test-integration.html di browser
+# Run
+http-server -p 8000
 ```
 
-## 📖 Cara Pakai
+## 🔌 Koneksi ke Backend
 
-### 1. Cari Rekomendasi HP
-1. Buka halaman **Rekomendasi**
-2. Atur filter sesuai kebutuhan:
-   - **Budget** (min-max)
-   - **Brand** (opsional)
-   - **RAM** minimal
-   - **Storage** minimal
-   - **Baterai** minimal
-   - **Kamera** minimal
-3. Klik **Cari HP Sekarang**
-4. Sistem akan menampilkan HP yang paling cocok dengan score similarity
+Edit file `js/api.js` untuk mengatur URL backend:
 
-### 2. Bandingkan HP
-1. Buka halaman **Bandingkan**
-2. Pilih hingga 3 HP dari daftar
-3. Klik **Bandingkan Sekarang**
-4. Lihat perbandingan spesifikasi side-by-side
+```javascript
+// Development (local)
+const API_URL = 'http://localhost:5000/api';
 
-### 3. Lihat Detail HP
-- Klik card HP mana saja
-- Akan tampil detail lengkap: spesifikasi, harga, dan fitur
-
-## 🔌 API Endpoints
-
-### Phones
+// Production (deployed)
+const API_URL = 'https://your-backend-url.com/api';
 ```
-GET  /api/phones              # Get all phones (dengan query params filter)
-GET  /api/phones/{id}         # Get phone by ID
-GET  /api/phones/search/{query}  # Search phones by name
-```
-
-### Recommendations
-```
-POST /api/recommendations     # Get recommendations
-```
-
-**Request Body:**
-```json
-{
-  "min_price": 2000000,
-  "max_price": 5000000,
-  "min_ram": 8,
-  "min_storage": 128,
-  "min_battery": 5000,
-  "min_camera": 50,
-  "brand": "Samsung",
-  "limit": 10
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "data": [
-    {
-      "phone": {
-        "id": "samsung-a55",
-        "name": "Samsung Galaxy A55 5G",
-        "price": 4299000,
-        "specs": { ... }
-      },
-      "score": 92.5,
-      "similarity": 87.3,
-      "match_reasons": [
-        "Harga sesuai budget Rp 2.000.000 - Rp 5.000.000",
-        "RAM 8GB memenuhi kebutuhan minimal",
-        "Baterai 5000mAh sangat awet"
-      ]
-    }
-  ],
-  "total": 1,
-  "filters_applied": { ... }
-}
-```
-
-### Brands
-```
-GET  /api/brands              # Get all available brands
-```
-
-Dokumentasi lengkap API: **http://localhost:5000/docs**
-
-## 🧠 Algoritma Rekomendasi
-
-Sistem menggunakan **Content-Based Filtering** dengan langkah:
-
-1. **Feature Extraction** - Ekstrak fitur numerik:
-   - Price (normalized)
-   - RAM (GB)
-   - Storage (GB)
-   - Battery (mAh)
-   - Camera (MP)
-   - Brand (one-hot encoding)
-
-2. **Feature Weighting** - Bobot pada fitur penting:
-   - Price: 30%
-   - RAM: 20%
-   - Storage: 15%
-   - Battery: 15%
-   - Camera: 10%
-   - Brand: 10%
-
-3. **Similarity Calculation** - Cosine Similarity:
-   ```
-   similarity = (A · B) / (||A|| * ||B||)
-   ```
-
-4. **Scoring** - Kombinasi similarity dan match criteria:
-   ```
-   final_score = similarity * 0.7 + criteria_match * 0.3
-   ```
-
-5. **Ranking** - Urutkan berdasarkan score tertinggi
 
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary**: `#6366f1` (Indigo)
-- **Surface**: `#1a1a2e` (Dark Blue)
-- **Card**: `#252541` (Slate)
-- **Text**: `#e5e7eb` (Light Gray)
-- **Accent**: `#818cf8` (Light Indigo)
+```css
+--primary: #6366f1        /* Indigo - primary actions */
+--primary-light: #818cf8  /* Light indigo - hover states */
+--surface: #1a1a2e        /* Dark blue - main background */
+--card: #252541           /* Slate - card background */
+--text: #e5e7eb           /* Light gray - main text */
+--text-muted: #9ca3af     /* Gray - secondary text */
+--border: #374151         /* Dark gray - borders */
+--success: #10b981        /* Green - success states */
+--error: #ef4444          /* Red - error states */
+```
 
 ### Typography
-- **Font**: Inter (system-ui fallback)
-- **Sizes**: 14px (body), 16px (large), 20px+ (headings)
+- **Font**: Inter, system-ui, sans-serif
+- **Body**: 14px / 1.6 line-height
+- **Headers**: 20px - 32px (responsive)
+- **Weights**: 400 (regular), 500 (medium), 600 (semibold)
 
-### Components
-- Cards dengan glass effect subtil
-- Smooth animations (200-300ms)
-- Focus states accessible (keyboard navigation)
-- Mobile-first responsive breakpoints
+### Spacing Scale
+```css
+--space-1: 0.25rem  /* 4px */
+--space-2: 0.5rem   /* 8px */
+--space-3: 0.75rem  /* 12px */
+--space-4: 1rem     /* 16px */
+--space-6: 1.5rem   /* 24px */
+--space-8: 2rem     /* 32px */
+```
+
+### Border Radius
+```css
+--radius-sm: 0.375rem   /* 6px - small elements */
+--radius: 0.5rem        /* 8px - cards */
+--radius-lg: 0.75rem    /* 12px - large cards */
+--radius-full: 9999px   /* pills/circles */
+```
+
+## 📄 Halaman
+
+### 1. Homepage (`index.html`)
+- Hero section dengan typing animation
+- Feature cards
+- Latest phones grid
+- Script: `main.js`, `typing-animation.js`
+
+### 2. Rekomendasi (`rekomendasi.html`)
+- Filter form (budget, brand, specs)
+- Result grid dengan score
+- Empty state & loading state
+- Script: `rekomendasi.js`
+
+### 3. Compare (`compare.html`)
+- Phone selection (max 3)
+- Side-by-side comparison table
+- Highlight differences
+- Script: `compare.js`
+
+### 4. Detail (`detail.html`)
+- Full specifications
+- Image gallery
+- Price info
+- Similar phones
+- Script: `detail.js`
+
+### 5. Test Integration (`test-integration.html`)
+- API connectivity tests
+- Feature tests
+- Manual test suite
+- Useful untuk debugging
+
+## 🧩 JavaScript Modules
+
+### `api.js` - API Layer
+```javascript
+// Fetch all phones
+const phones = await fetchPhones();
+
+// Get phone by ID
+const phone = await fetchPhoneById('samsung-a55');
+
+// Search phones
+const results = await searchPhones('samsung');
+
+// Get recommendations
+const recommendations = await getRecommendations({
+  min_price: 2000000,
+  max_price: 5000000,
+  min_ram: 8
+});
+```
+
+### `dummy-data.js` - Fallback Data
+Digunakan jika backend tidak tersedia. Berisi sample data untuk development.
+
+### `mobile-menu.js` - Navigation
+Handle mobile menu toggle dan responsive navigation.
+
+### `update-images.js` - Image Handler
+Fallback untuk image yang gagal load.
+
+## 🎭 States & UI Feedback
+
+### Loading State
+```javascript
+showLoading(container);
+// Shows spinner with text
+```
+
+### Error State
+```javascript
+showError(container, message);
+// Shows error message with retry button
+```
+
+### Empty State
+```javascript
+showEmptyState(container, message);
+// Shows no results message
+```
+
+### Success State
+Tampilkan data dengan smooth transition.
+
+## ♿ Accessibility
+
+- ✅ Semantic HTML5 elements
+- ✅ ARIA labels untuk interactive elements
+- ✅ Keyboard navigation support (Tab, Enter, Escape)
+- ✅ Focus visible states
+- ✅ Color contrast WCAG AA compliant
+- ✅ Responsive touch targets (44px minimum)
+
+## 📱 Responsive Breakpoints
+
+```css
+/* Mobile first approach */
+@media (min-width: 640px) { }   /* sm: tablets */
+@media (min-width: 768px) { }   /* md: small laptops */
+@media (min-width: 1024px) { }  /* lg: desktops */
+@media (min-width: 1280px) { }  /* xl: large screens */
+```
 
 ## 🧪 Testing
 
-### Manual Testing
-1. Buka `test-integration.html`
-2. Jalankan test suite
-3. Verifikasi semua test pass
+### Manual Testing Checklist
+- [ ] Homepage loads dengan typing animation
+- [ ] Navigation links work
+- [ ] Mobile menu toggle
+- [ ] Filter form validation
+- [ ] Search functionality
+- [ ] Recommendation results
+- [ ] Compare selection (max 3)
+- [ ] Detail page display
+- [ ] Image fallback
+- [ ] Error handling
+- [ ] Loading states
+- [ ] Responsive pada mobile/tablet
 
-### Test Coverage
-- ✅ API connectivity
-- ✅ Phone list fetch
-- ✅ Phone detail fetch
-- ✅ Search functionality
-- ✅ Recommendation algorithm
-- ✅ Filter application
-- ✅ Compare functionality
+### Browser Compatibility
+- ✅ Chrome/Edge 90+
+- ✅ Firefox 88+
+- ✅ Safari 14+
+- ✅ Mobile browsers
 
-## 📝 Catatan Pengembangan
+## 🔧 Customization
 
-### Known Issues
-- Data HP hardcoded di `phones.json` (bisa ditambah integrasi API real-time)
-- Image handling masih pakai placeholder (bisa ditambah image upload)
+### Ubah Warna Tema
+Edit `css/style.css`:
+```css
+:root {
+  --primary: #your-color;
+  --surface: #your-background;
+}
+```
 
-### Future Improvements
-- [ ] Tambah filter display size & processor
-- [ ] User authentication & saved preferences
-- [ ] Review & rating system
-- [ ] Price tracking & alert
-- [ ] Collaborative filtering algorithm
-- [ ] Mobile app (React Native / Flutter)
-- [ ] Database migration ke PostgreSQL/MongoDB
+### Tambah Halaman Baru
+1. Copy struktur HTML dari halaman existing
+2. Import CSS & JS modules yang dibutuhkan
+3. Tambah link di navigation
 
-## 🤝 Contributing
+### Modifikasi API Endpoint
+Edit `js/api.js` dan sesuaikan function yang dibutuhkan.
 
-Contributions, issues, dan feature requests sangat diterima!
+## 🐛 Troubleshooting
 
-1. Fork repo ini
-2. Buat branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
+### CORS Error
+Backend harus enable CORS. Cek `backend/app/main.py`:
+```python
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+```
 
-## 📄 License
+### Image Not Loading
+Pastikan path image benar atau fallback image tersedia.
 
-Proyek ini menggunakan MIT License. Lihat file `LICENSE` untuk detail.
+### API Not Responding
+1. Cek backend sudah running di port 5000
+2. Cek URL di `js/api.js` sudah benar
+3. Lihat console untuk error details
 
-## 👥 Author
+### Styling Tidak Apply
+1. Clear browser cache (Ctrl+Shift+R)
+2. Cek CSS file path di HTML
+3. Inspect element untuk debug specificity
 
-**Sistem Rekomendasi Handphone**  
-Semester 5 Project
+## 📝 Best Practices
 
-## 🙏 Acknowledgments
+### Performance
+- ✅ Minimize DOM manipulation
+- ✅ Use event delegation
+- ✅ Lazy load images
+- ✅ Debounce search input
 
-- FastAPI documentation
-- scikit-learn documentation
-- MDN Web Docs
-- Inspiration from various e-commerce recommendation systems
+### Code Quality
+- ✅ Use ES6+ features (const, let, arrow functions)
+- ✅ Async/await untuk asynchronous code
+- ✅ Descriptive variable names
+- ✅ Comment complex logic
+
+### Maintainability
+- ✅ Separate concerns (API, UI, logic)
+- ✅ Reusable functions
+- ✅ Consistent naming conventions
+- ✅ Keep functions small and focused
 
 ---
 
-⭐ Star repo ini jika membantu!
+Happy coding! 🚀
