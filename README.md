@@ -9,11 +9,22 @@ Aplikasi web untuk memberikan rekomendasi handphone yang sesuai dengan budget da
 
 ## 🎯 Fitur Utama
 
-- **Rekomendasi Pintar** - Sistem AI yang merekomendasikan HP berdasarkan preferensi dan budget kamu
+### Rekomendasi Cerdas
+- **Rekomendasi berdasarkan Kategori** - Pilih kebutuhan: Gaming, Kerja & Produktivitas, Sosial Media, Fotografi, Multimedia, atau Budget Friendly
+- **Multi-kategori** - Gabungkan beberapa kategori sekaligus untuk rekomendasi yang lebih spesifik
+- **Smart Scoring System** - Algoritma menilai HP berdasarkan bobot kategori yang dipilih
 - **Filter Lengkap** - Cari HP berdasarkan harga, brand, RAM, storage, baterai, dan kamera
+- **Rating Bintang** - Visualisasi tingkat kesesuaian dengan rating 1-5 bintang
+- **Badge Kategori** - HP terbaik mendapat badge khusus (Best for Gaming, Camera Beast, Budget King, dll)
+
+### Fitur Lainnya
+- **Quick Compare** - Centang hingga 4 HP untuk dibandingkan langsung
+- **Sort & Filter** - Urutkan hasil berdasarkan: Paling Cocok, Termurah, Termahal, atau Terbaru
 - **Perbandingan HP** - Bandingkan spesifikasi hingga 3 HP sekaligus secara side-by-side
 - **Detail Lengkap** - Lihat spesifikasi lengkap dan harga setiap handphone
+- **Dark/Light Mode** - Toggle theme dengan persistent preference
 - **Responsive Design** - Tampilan optimal di semua perangkat (desktop, tablet, mobile)
+- **Modern UI** - Clean, professional design dengan smooth animations
 
 ---
 
@@ -21,7 +32,10 @@ Aplikasi web untuk memberikan rekomendasi handphone yang sesuai dengan budget da
 
 ### Frontend
 - **HTML5, CSS3, JavaScript (Vanilla)** - No framework, ringan dan cepat
+- **CSS Variables** - Dynamic theming untuk dark/light mode
 - **Fetch API** - Komunikasi dengan backend
+- **SVG Icons** - Icon vector untuk performa optimal
+- **LocalStorage** - Menyimpan preference theme
 
 ### Backend
 - **Python 3.10+** - Programming language
@@ -32,8 +46,10 @@ Aplikasi web untuk memberikan rekomendasi handphone yang sesuai dengan budget da
 
 ### Algoritma
 - **Content-Based Filtering** - Rekomendasi berdasarkan kesamaan fitur HP
-- **Cosine Similarity** - Menghitung tingkat kemiripan antar HP (0-100%)
-- **Weighted Features** - Prioritas pada harga, RAM, storage, baterai, kamera
+- **Category-Based Recommendation** - Scoring khusus per kategori kebutuhan
+- **Chipset Tier System** - Klasifikasi processor (Flagship, High, Mid, Entry)
+- **Cosine Similarity** - Menghitung tingkat kemiripan antar HP
+- **Weighted Scoring** - Bobot dinamis berdasarkan kategori yang dipilih
 
 ---
 
@@ -46,21 +62,24 @@ sistem-rekomendasi-handphone/
 │   │   ├── main.py            # FastAPI entry point
 │   │   ├── models.py          # Data models (Pydantic)
 │   │   ├── database.py        # JSON database handler
-│   │   ├── recommendation.py  # Algoritma Content-Based Filtering
+│   │   ├── recommendation.py  # Algoritma Content-Based & Category-Based
 │   │   └── routes/
 │   │       └── phones.py      # API endpoints
 │   ├── data/
-│   │   └── phones.json        # Database HP (120+ phones)
+│   │   ├── phones.json        # Database HP (110+ phones)
+│   │   └── phones_database.csv
 │   └── requirements.txt       # Python dependencies
 ├── css/
-│   └── style.css              # Stylesheet
+│   └── style.css              # Stylesheet dengan dark/light mode
 ├── js/
 │   ├── api.js                 # API communication
 │   ├── main.js                # Homepage logic
-│   ├── rekomendasi.js         # Recommendation page
+│   ├── rekomendasi.js         # Recommendation page dengan category & sort
 │   ├── compare.js             # Compare page
-│   └── detail.js              # Detail page
-├── images/                    # Image assets (120+ HP photos)
+│   ├── theme-toggle.js        # Dark/light mode handler
+│   ├── mobile-menu.js         # Mobile navigation
+│   └── typing-animation.js    # Hero text animation
+├── images/                    # Image assets (110+ HP photos)
 ├── index.html                 # Homepage
 ├── rekomendasi.html           # Halaman rekomendasi
 ├── compare.html               # Halaman perbandingan
@@ -119,26 +138,41 @@ Akses di: **http://localhost:8000**
 
 ## 📖 Cara Pakai
 
-### 1. Cari Rekomendasi HP
+### 1. Cari Rekomendasi HP Berdasarkan Kategori
 1. Buka halaman **Rekomendasi**
-2. Atur filter:
-   - **Budget** (harga min-max)
-   - **Brand** (Samsung, iPhone, Xiaomi, dll) - opsional
-   - **RAM** minimal
-   - **Storage** minimal
-   - **Baterai** minimal
-   - **Kamera** minimal
-3. Klik **Cari HP Sekarang**
-4. Sistem akan tampilkan HP dengan **score similarity tertinggi**
+2. Pilih kategori kebutuhan:
+   - **Gaming** - Chipset kuat, RAM tinggi, layar AMOLED
+   - **Kerja & Produktivitas** - RAM cukup, battery awet, storage lega
+   - **Sosial Media** - Kamera selfie bagus, storage cukup
+   - **Fotografi** - Kamera utama tinggi, chipset image processing bagus
+   - **Multimedia** - Layar besar, battery jumbo, storage lega
+   - **Budget Friendly** - Harga terjangkau tapi spek decent
+3. Bisa pilih **lebih dari satu kategori** untuk kombinasi kebutuhan
+4. Optional: Atur filter budget, brand, RAM minimal, dll
+5. Klik **Terapkan Filter**
+6. Sistem akan tampilkan HP dengan **rating bintang tertinggi**
+7. HP terbaik akan dapat **badge kategori** (Best for Gaming, Camera Beast, dll)
 
-### 2. Bandingkan HP
+### 2. Quick Compare
+1. Centang checkbox di card HP yang ingin dibandingkan (max 4)
+2. Compare bar akan muncul di bawah
+3. Klik **Bandingkan Sekarang** untuk langsung ke halaman compare
+
+### 3. Sort Hasil
+Gunakan dropdown **Urutkan** untuk mengurutkan hasil:
+- **Paling Cocok** - Berdasarkan rating tertinggi (default)
+- **Termurah** - Harga rendah ke tinggi
+- **Termahal** - Harga tinggi ke rendah
+- **Terbaru** - RAM tertinggi (proxy HP baru)
+
+### 4. Bandingkan HP Manual
 1. Buka halaman **Bandingkan**
-2. Pilih hingga 3 HP dari daftar
-3. Klik **Bandingkan Sekarang**
-4. Lihat perbandingan spesifikasi lengkap side-by-side
+2. Pilih hingga 3 HP dari search box
+3. Lihat perbandingan spesifikasi lengkap side-by-side
 
-### 3. Lihat Detail HP
-- Klik card HP mana saja untuk melihat detail lengkap
+### 5. Dark/Light Mode
+- Klik toggle theme di header (desktop: setelah menu, mobile: sebelah kiri hamburger)
+- Preference tersimpan otomatis
 
 ---
 
@@ -149,16 +183,14 @@ Akses di: **http://localhost:8000**
 GET  /api/phones              # Get all phones (dengan filter)
 GET  /api/phones/{id}         # Get phone by ID
 GET  /api/phones/search/{query}  # Search phones
-```
-
-**Contoh dengan filter:**
-```
-GET /api/phones?min_price=2000000&max_price=5000000&min_ram=8
+GET  /api/brands              # Get all available brands
 ```
 
 ### 🎯 Recommendations
+
+#### Standard Recommendations
 ```
-POST /api/recommendations     # Get recommendations
+POST /api/recommendations     # Get recommendations dengan filter biasa
 ```
 
 **Request Body:**
@@ -175,6 +207,30 @@ POST /api/recommendations     # Get recommendations
 }
 ```
 
+#### Category-Based Recommendations
+```
+POST /api/recommendations/by-category     # Get recommendations berdasarkan kategori
+```
+
+**Request Body:**
+```json
+{
+  "categories": ["gaming", "fotografi"],
+  "min_price": 5000000,
+  "max_price": 15000000,
+  "brand": "Samsung",
+  "limit": 20
+}
+```
+
+**Valid Categories:**
+- `gaming` - HP untuk gaming
+- `kerja` - HP untuk produktivitas
+- `sosmed` - HP untuk sosial media
+- `fotografi` - HP untuk fotografi
+- `multimedia` - HP untuk hiburan
+- `budget` - HP budget friendly
+
 **Response:**
 ```json
 {
@@ -182,33 +238,27 @@ POST /api/recommendations     # Get recommendations
   "data": [
     {
       "phone": {
-        "id": "samsung-a55",
-        "name": "Samsung Galaxy A55 5G",
-        "price": 4299000,
+        "id": 1,
         "brand": "Samsung",
-        "specs": {
-          "ram": 8,
-          "storage": 256,
-          "battery": 5000,
-          "camera": 50
-        }
+        "model": "Galaxy S24 Ultra",
+        "price": 19999000,
+        "ram": 12,
+        "storage": 512,
+        "battery": 5000,
+        "camera_main": 200,
+        "chipset": "Snapdragon 8 Gen 3"
       },
-      "score": 92.5,
-      "similarity": 87.3,
+      "score": 95.8,
+      "categories": ["gaming", "fotografi"],
       "match_reasons": [
-        "Harga sesuai budget Rp 2.000.000 - Rp 5.000.000",
-        "RAM 8GB memenuhi kebutuhan minimal",
-        "Baterai 5000mAh sangat awet"
+        "Chipset Snapdragon 8 Gen 3 kencang untuk gaming",
+        "RAM 12GB mantap untuk multitasking game",
+        "Kamera utama 200MP detail tinggi"
       ]
     }
   ],
-  "total": 1
+  "message": "Found 15 recommendations for gaming, fotografi"
 }
-```
-
-### 🏷️ Brands
-```
-GET  /api/brands              # Get all available brands
 ```
 
 📚 **API Documentation Lengkap**: http://localhost:5000/docs (saat server running)
@@ -217,101 +267,134 @@ GET  /api/brands              # Get all available brands
 
 ## 🧠 Cara Kerja Algoritma
 
-### Content-Based Filtering
+### Category-Based Scoring System
 
-Sistem menggunakan **Cosine Similarity** untuk menghitung kesamaan antar HP:
+Sistem memberikan score berbeda untuk setiap kategori:
 
-1. **Feature Extraction** - Ambil fitur numerik:
-   - Price (dinormalisasi)
-   - RAM (GB)
-   - Storage (GB)
-   - Battery (mAh)
-   - Camera (MP)
-   - Brand (one-hot encoding)
+#### 1. Gaming (40% chipset, 30% RAM, 20% display, 10% battery)
+- **Chipset Tier**: Flagship (100%), High (75%), Mid (50%), Entry (25%)
+- **RAM Score**: Dinormalisasi ke 16GB (ideal gaming)
+- **Display Quality**: AMOLED/OLED = 100%, IPS = 50%
+- **Battery**: Dinormalisasi ke 6000mAh
 
-2. **Feature Weighting** - Bobot kepentingan:
-   - 💰 Price: **30%**
-   - 🧠 RAM: **20%**
-   - 💾 Storage: **15%**
-   - 🔋 Battery: **15%**
-   - 📷 Camera: **10%**
-   - 🏷️ Brand: **10%**
+#### 2. Kerja & Produktivitas (30% RAM, 30% battery, 25% storage, 15% chipset)
+- Fokus pada multitasking dan daya tahan
+- RAM dan battery mendapat bobot tertinggi
 
-3. **Cosine Similarity** - Hitung kemiripan:
-   ```
-   similarity(A, B) = (A · B) / (||A|| × ||B||)
-   ```
-   Nilai: 0% (beda banget) hingga 100% (identik)
+#### 3. Sosial Media (40% camera front, 25% storage, 20% RAM, 15% chipset)
+- **Camera Front**: Dinormalisasi ke 50MP (selfie quality)
+- Storage untuk menyimpan foto/video
 
-4. **Scoring & Ranking** - Kombinasi similarity + kriteria match:
-   ```
-   final_score = (similarity × 0.7) + (criteria_match × 0.3)
-   ```
+#### 4. Fotografi (50% camera main, 30% chipset, 20% storage)
+- **Camera Main**: Dinormalisasi ke 200MP
+- Chipset untuk image processing
 
-5. **Hasil** - HP diurutkan berdasarkan score tertinggi
+#### 5. Multimedia (30% battery, 25% display size, 25% storage, 20% chipset)
+- Display size dinormalisasi ke 7 inch
+- Battery untuk streaming/hiburan lama
+
+#### 6. Budget Friendly (60% price value, 40% specs balance)
+- **Price Value**: Inverse dari harga (lebih murah = score lebih tinggi)
+- **Specs Balance**: Kombinasi RAM, storage, battery, camera
+
+### Multi-Category Scoring
+Jika user memilih multiple kategori:
+```
+final_score = average(score_category_1, score_category_2, ...)
+```
+
+### Chipset Tier Classification
+- **Flagship**: Snapdragon 8 Gen 3, A18 Pro, Dimensity 9400, dll
+- **High**: Snapdragon 7+ Gen 3, A16 Bionic, Dimensity 8300, dll
+- **Mid**: Snapdragon 7s Gen 3, Helio G100, dll
+- **Entry**: Snapdragon 680, Helio G85, dll
 
 ---
 
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary**: `#6366f1` (Indigo)
-- **Background**: `#1a1a2e` (Dark Blue)
-- **Card**: `#252541` (Slate)
-- **Text**: `#e5e7eb` (Light Gray)
+#### Light Mode
+- **Primary**: `#2563eb` (Blue)
+- **Background**: `#ffffff` (White)
+- **Card**: `#f8f9fa` (Light Gray)
+- **Text**: `#212529` (Dark Gray)
+
+#### Dark Mode
+- **Primary**: `#3b82f6` (Light Blue)
+- **Background**: `#1a1a1a` (Dark)
+- **Card**: `#2d2d2d` (Dark Gray)
+- **Text**: `#f8f9fa` (Light Gray)
 
 ### Typography
 - **Font**: Inter, system-ui, sans-serif
 - **Sizes**: 14px (body), 16px-32px (headings)
 
+### UI Components
+- **Slider Toggle** - iOS-style theme switcher dengan sun/moon icon
+- **Category Pills** - Rounded pills dengan gradient active state
+- **Badge System** - Color-coded badges per kategori
+- **Star Rating** - 1-5 stars untuk visualisasi score
+- **Glass Effect** - Removed (pakai solid colors untuk professional look)
+
 ---
 
 ## 📊 Data HP
 
-Database berisi **120+ handphone** dari berbagai brand:
-- 📱 Samsung (15 models)
-- 📱 Apple iPhone (8 models)
-- 📱 Xiaomi & Redmi (18 models)
-- 📱 OPPO (13 models)
-- 📱 Vivo (10 models)
-- 📱 Realme (11 models)
-- 📱 OnePlus (6 models)
-- 📱 POCO (3 models)
-- 📱 Infinix (8 models)
-- 📱 Tecno (7 models)
-- 📱 Google Pixel (5 models)
-- 📱 Nothing (4 models)
-- 📱 Motorola (4 models)
-- 📱 Sony Xperia (4 models)
-- 📱 ASUS ROG (4 models)
-- 📱 Honor (3 models)
-- 📱 Huawei (3 models)
+Database berisi **110+ handphone** dari berbagai brand:
+- Samsung (10 models)
+- Apple iPhone (8 models)
+- Xiaomi & Redmi (10 models)
+- OPPO (8 models)
+- Vivo (7 models)
+- Realme (8 models)
+- OnePlus (4 models)
+- POCO (2 models)
+- Infinix (5 models)
+- Tecno (4 models)
+- Google Pixel (4 models)
+- Nothing (3 models)
+- Motorola (3 models)
+- Sony Xperia (3 models)
+- ASUS ROG (3 models)
+- Honor (3 models)
+- Huawei (3 models)
 
-Range harga: **Rp 1.000.000 - Rp 30.000.000**
+Range harga: **Rp 999.000 - Rp 26.999.000**
 
 ---
 
-## 🧪 Testing
+## ✨ Fitur Tambahan yang Telah Diimplementasi
 
-### Manual Testing
-Buka `test-integration.html` di browser untuk menjalankan test suite:
-- ✅ API connectivity
-- ✅ Fetch phones
-- ✅ Search functionality
-- ✅ Recommendation algorithm
-- ✅ Filter application
-- ✅ Compare feature
+- ✅ Rekomendasi berdasarkan kategori kebutuhan
+- ✅ Multi-kategori selection
+- ✅ Smart scoring per kategori
+- ✅ Rating bintang (1-5 stars)
+- ✅ Badge kategori untuk HP terbaik
+- ✅ Quick compare dengan checkbox
+- ✅ Sort results (Paling Cocok, Termurah, Termahal, Terbaru)
+- ✅ Dark/Light mode toggle
+- ✅ Tooltip kategori (hover untuk info)
+- ✅ Category match reasons
+- ✅ Responsive mobile layout
+- ✅ Feature cards dengan SVG icons
+- ✅ Compare bar sticky bottom
 
 ---
 
 ## 📝 TODO / Future Improvements
 
-- [ ] Tambah filter processor & display size
-- [ ] User authentication & save preferences
+- [ ] Kombinasi kategori dengan prioritas slider (Gaming 70% + Fotografi 30%)
+- [ ] Filter chipset brand preference (Snapdragon, MediaTek, Apple)
+- [ ] Filter refresh rate untuk Gaming (60Hz, 90Hz, 120Hz, 144Hz)
+- [ ] Save/Favorit HP (localStorage)
+- [ ] Share results via link/WhatsApp
+- [ ] Statistik & insights (rata-rata harga HP gaming, dll)
+- [ ] User authentication & preferences
 - [ ] Review & rating system
 - [ ] Price tracking & alert notification
 - [ ] Collaborative filtering algorithm
-- [ ] Mobile app version (React Native/Flutter)
+- [ ] Mobile app version
 - [ ] Integrasi API harga real-time dari marketplace
 
 ---
@@ -325,7 +408,7 @@ Contributions welcome! Buat Pull Request atau buka Issue untuk bug reports dan f
 ## 👨‍💻 Author
 
 **PhoneRec - Sistem Rekomendasi Handphone**  
-Proyek Tugas Semester 5
+Proyek Tugas Semester 5 - 2026
 
 ---
 
@@ -340,6 +423,7 @@ Proyek ini dibuat untuk keperluan akademik.
 - FastAPI Documentation
 - scikit-learn Documentation
 - MDN Web Docs
+- Inter Font by Rasmus Andersson
 - Inspiration dari berbagai sistem rekomendasi e-commerce
 
 ---

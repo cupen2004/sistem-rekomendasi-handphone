@@ -157,6 +157,58 @@ const api = {
         data: brands
       };
     }
+  },
+
+  // Get recommendations by category
+  async getRecommendationsByCategory(params = {}) {
+    try {
+      const body = {
+        categories: params.categories || [],
+        min_price: params.minPrice ? parseInt(params.minPrice) : null,
+        max_price: params.maxPrice ? parseInt(params.maxPrice) : null,
+        brand: params.brand || null,
+        limit: params.limit || 20
+      };
+
+      const response = await fetch(`${API_BASE_URL}/recommendations/by-category`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body)
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.warn('Backend not available, using dummy data');
+      const dataSource = window.DUMMY_PHONES || [];
+      let filtered = [...dataSource];
+      
+      if (params.minPrice) {
+        filtered = filtered.filter(p => p.price >= parseInt(params.minPrice));
+      }
+      if (params.maxPrice) {
+        filtered = filtered.filter(p => p.price <= parseInt(params.maxPrice));
+      }
+      if (params.brand) {
+        filtered = filtered.filter(p => p.brand === params.brand);
+      }
+      
+      return {
+        success: true,
+        data: filtered.slice(0, params.limit || 20).map(phone => ({
+          phone: phone,
+          score: Math.random() * 40 + 60,
+          categories: params.categories || [],
+          match_reasons: ['Spek sesuai kategori', 'Performa bagus', 'Harga value']
+        }))
+      };
+    }
   }
 };
 
@@ -208,4 +260,25 @@ const getScoreColor = (score) => {
   if (percentage >= 60) return 'score-good';
   if (percentage >= 40) return 'score-fair';
   return 'score-poor';
+};
+
+const getStarRating = (score) => {
+  if (!score) return '';
+  const percentage = typeof score === 'number' ? score : parseFloat(score);
+  
+  // Convert score to 5-star rating
+  const stars = Math.round((percentage / 100) * 5 * 2) / 2; // Round to nearest 0.5
+  
+  let starsHTML = '';
+  for (let i = 1; i <= 5; i++) {
+    if (i <= Math.floor(stars)) {
+      starsHTML += '<span class="star filled">★</span>';
+    } else if (i === Math.ceil(stars) && stars % 1 !== 0) {
+      starsHTML += '<span class="star half">★</span>';
+    } else {
+      starsHTML += '<span class="star empty">☆</span>';
+    }
+  }
+  
+  return starsHTML;
 };

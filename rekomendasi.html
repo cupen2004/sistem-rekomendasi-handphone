@@ -19,7 +19,44 @@
           <a href="index.html">Home</a>
           <a href="rekomendasi.html">Rekomendasi</a>
           <a href="compare.html">Bandingkan</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <div class="theme-toggle-slider">
+              <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+              <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </div>
+          </button>
         </nav>
+
+        <button id="theme-toggle-mobile" class="theme-toggle theme-toggle-mobile" aria-label="Toggle theme">
+          <div class="theme-toggle-slider">
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </div>
+        </button>
         
         <button class="nav-mobile">☰</button>
       </div>
@@ -32,6 +69,22 @@
     <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
       Filter HP sesuai kebutuhan dan budget kamu
     </p>
+
+    <!-- Category Selection -->
+    <div class="category-section">
+      <div class="category-header">
+        <h2 class="category-title">Pilih Kebutuhan Kamu</h2>
+        <p class="category-subtitle">Bisa pilih lebih dari satu kategori</p>
+      </div>
+      <div class="category-pills">
+        <button type="button" class="category-pill" data-category="gaming" data-tooltip="Chipset kuat, RAM tinggi, layar AMOLED">Gaming</button>
+        <button type="button" class="category-pill" data-category="kerja" data-tooltip="RAM cukup, battery awet, storage lega">Kerja & Produktivitas</button>
+        <button type="button" class="category-pill" data-category="sosmed" data-tooltip="Kamera selfie bagus, storage cukup">Sosial Media</button>
+        <button type="button" class="category-pill" data-category="fotografi" data-tooltip="Kamera utama tinggi, chipset image processing bagus">Fotografi</button>
+        <button type="button" class="category-pill" data-category="multimedia" data-tooltip="Layar besar, battery jumbo, storage lega">Multimedia</button>
+        <button type="button" class="category-pill" data-category="budget" data-tooltip="Harga murah tapi spek decent">Budget Friendly</button>
+      </div>
+    </div>
 
     <!-- Filter Panel -->
     <div class="filter-panel">
@@ -147,9 +200,20 @@
     <div id="results-error" class="error" style="display: none;"></div>
 
     <div id="results-section" style="display: none;">
-      <div class="phones-header">
-        <h2 class="section-title" id="results-title">Hasil Rekomendasi</h2>
-        <div id="results-count" style="color: var(--gray-400);"></div>
+      <div class="results-controls">
+        <div>
+          <h2 class="section-title" id="results-title">Hasil Rekomendasi</h2>
+          <div id="results-count" style="color: var(--gray-400);"></div>
+        </div>
+        <div class="sort-control">
+          <label for="sort-select" class="sort-label">Urutkan:</label>
+          <select id="sort-select" class="sort-select">
+            <option value="best-match">Paling Cocok</option>
+            <option value="price-low">Termurah</option>
+            <option value="price-high">Termahal</option>
+            <option value="newest">Terbaru (RAM Tertinggi)</option>
+          </select>
+        </div>
       </div>
       <div id="results-list" class="phones-grid"></div>
     </div>
@@ -159,6 +223,19 @@
       <p>Atur filter di atas untuk mencari HP yang sesuai dengan kebutuhan kamu</p>
     </div>
   </main>
+
+  <!-- Compare Bar -->
+  <div id="compare-bar" class="compare-bar">
+    <div class="compare-bar-content">
+      <div class="compare-bar-text">
+        <span id="compare-count">0</span> HP dipilih untuk dibandingkan
+      </div>
+      <div class="compare-bar-actions">
+        <button id="compare-btn" class="compare-bar-btn btn-compare">Bandingkan Sekarang</button>
+        <button id="compare-clear-btn" class="compare-bar-btn btn-clear">Bersihkan</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -173,6 +250,7 @@
   <script src="js/update-images.js"></script>
   <script src="js/api.js"></script>
   <script src="js/mobile-menu.js"></script>
+  <script src="js/theme-toggle.js"></script>
   <script src="js/rekomendasi.js"></script>
 </body>
 </html>

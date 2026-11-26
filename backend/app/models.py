@@ -38,6 +38,14 @@ class RecommendationRequest(BaseModel):
     limit: Optional[int] = Field(10, ge=1, le=50)
 
 
+class CategoryRecommendationRequest(BaseModel):
+    categories: List[str] = Field(..., min_items=1)
+    min_price: Optional[int] = Field(None, ge=0)
+    max_price: Optional[int] = Field(None, ge=0)
+    brand: Optional[str] = None
+    limit: Optional[int] = Field(10, ge=1, le=50)
+
+
 class RecommendationResponse(BaseModel):
     success: bool
     data: List[dict]

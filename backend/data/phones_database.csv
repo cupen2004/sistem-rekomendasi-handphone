@@ -1,0 +1,111 @@
+﻿ID,Brand,Model,Price (Rp),RAM (GB),Storage (GB),Battery (mAh),Camera Main (MP),Camera Front (MP),Chipset,OS,Display Size (inch),Display Type,Image URL
+1,Samsung,Galaxy S24 Ultra,19999000,12,512,5000,200,12,Snapdragon 8 Gen 3,Android 14,6.8,Dynamic AMOLED 2X,images/phones/samsung-s24-ultra.jpg
+2,Samsung,Galaxy S24+,15999000,12,512,4900,50,12,Exynos 2400,Android 14,6.7,Dynamic AMOLED 2X,images/phones/samsung-s24-plus.jpg
+3,Samsung,Galaxy S24,12999000,8,256,4000,50,12,Exynos 2400,Android 14,6.2,Dynamic AMOLED 2X,images/phones/samsung-s24.jpg
+4,Samsung,Galaxy Z Fold6,26999000,12,512,4400,50,10,Snapdragon 8 Gen 3,Android 14,7.6,Foldable AMOLED,images/phones/samsung-z-fold6.jpg
+5,Samsung,Galaxy Z Flip6,16999000,12,512,4000,50,10,Snapdragon 8 Gen 3,Android 14,6.7,Foldable AMOLED,images/phones/samsung-z-flip6.jpg
+6,Samsung,Galaxy A55,5999000,8,256,5000,50,32,Exynos 1480,Android 14,6.6,Super AMOLED,images/phones/samsung-a55.jpg
+7,Samsung,Galaxy A35,4599000,8,256,5000,50,13,Exynos 1380,Android 14,6.6,Super AMOLED,images/phones/samsung-a35.jpg
+8,Samsung,Galaxy A25,3499000,8,256,5000,50,13,Exynos 1280,Android 14,6.5,Super AMOLED,images/phones/samsung-a25.jpg
+9,Samsung,Galaxy A15,2299000,8,256,5000,50,13,MediaTek Helio G99,Android 14,6.5,Super AMOLED,images/phones/samsung-a15.jpg
+10,Samsung,Galaxy M55,5299000,8,256,5000,50,50,Snapdragon 7 Gen 1,Android 14,6.7,Super AMOLED+,images/phones/samsung-m55.jpg
+11,Apple,iPhone 16 Pro Max,25999000,8,512,4685,48,12,A18 Pro,iOS 18,6.9,Super Retina XDR,images/phones/iphone-16-pro-max.jpg
+12,Apple,iPhone 16 Pro,21999000,8,256,3582,48,12,A18 Pro,iOS 18,6.3,Super Retina XDR,images/phones/iphone-16-pro.jpg
+13,Apple,iPhone 16 Plus,17999000,8,256,4674,48,12,A18,iOS 18,6.7,Super Retina XDR,images/phones/iphone-16-plus.jpg
+14,Apple,iPhone 16,15999000,8,256,3561,48,12,A18,iOS 18,6.1,Super Retina XDR,images/phones/iphone-16.jpg
+15,Apple,iPhone 15 Pro Max,21999000,8,256,4422,48,12,A17 Pro,iOS 17,6.7,Super Retina XDR,images/phones/iphone-15-pro-max.jpg
+16,Apple,iPhone 15,13999000,6,256,3349,48,12,A16 Bionic,iOS 17,6.1,Super Retina XDR,images/phones/iphone-15.jpg
+17,Apple,iPhone 14,11999000,6,128,3279,12,12,A15 Bionic,iOS 16,6.1,Super Retina XDR,images/phones/iphone-14.jpg
+18,Apple,iPhone SE 2024,7999000,4,128,2018,12,7,A15 Bionic,iOS 17,4.7,Retina IPS LCD,images/phones/iphone-se-2024.jpg
+19,Xiaomi,14 Ultra,16999000,16,512,5000,50,32,Snapdragon 8 Gen 3,Android 14,6.73,AMOLED,images/phones/xiaomi-14-ultra.jpg
+20,Xiaomi,14,11999000,12,512,4610,50,32,Snapdragon 8 Gen 3,Android 14,6.36,AMOLED,images/phones/xiaomi-14.jpg
+21,Xiaomi,14T Pro,8999000,12,512,5000,50,32,MediaTek Dimensity 9300+,Android 14,6.67,AMOLED,images/phones/xiaomi-14t-pro.jpg
+22,Xiaomi,14T,6999000,12,256,5000,50,32,MediaTek Dimensity 8300,Android 14,6.67,AMOLED,images/phones/xiaomi-14t.jpg
+23,Xiaomi,Redmi Note 14 Pro+,5499000,12,512,5110,200,20,Snapdragon 7s Gen 3,Android 14,6.67,AMOLED,images/phones/redmi-note-14-pro-plus.jpg
+24,Xiaomi,Redmi Note 14 Pro,4299000,8,256,5500,200,20,MediaTek Helio G100,Android 14,6.67,AMOLED,images/phones/redmi-note-14-pro.jpg
+25,Xiaomi,Redmi Note 14,2999000,8,256,5500,108,16,MediaTek Helio G99,Android 14,6.67,AMOLED,images/phones/redmi-note-14.jpg
+26,Xiaomi,Redmi 14C,1699000,8,256,5160,50,8,MediaTek Helio G81,Android 14,6.88,IPS LCD,images/phones/redmi-14c.jpg
+27,Xiaomi,Poco F6 Pro,7499000,12,512,5000,50,16,Snapdragon 8 Gen 2,Android 14,6.67,AMOLED,images/phones/poco-f6-pro.jpg
+28,Xiaomi,Poco X6 Pro,4299000,12,512,5000,64,16,MediaTek Dimensity 8300,Android 14,6.67,AMOLED,images/phones/poco-x6-pro.jpg
+29,Oppo,Find X8 Pro,17999000,16,512,5910,50,32,MediaTek Dimensity 9400,Android 15,6.78,AMOLED,images/phones/oppo-find-x8-pro.jpg
+30,Oppo,Find X8,12999000,12,512,5630,50,32,MediaTek Dimensity 9400,Android 15,6.59,AMOLED,images/phones/oppo-find-x8.jpg
+31,Oppo,Reno 12 Pro,6999000,12,512,5000,50,50,MediaTek Dimensity 7300,Android 14,6.7,AMOLED,images/phones/oppo-reno-12-pro.jpg
+32,Oppo,Reno 12,4999000,12,256,5000,50,32,MediaTek Dimensity 7300,Android 14,6.7,AMOLED,images/phones/oppo-reno-12.jpg
+33,Oppo,A80,3299000,8,256,5100,50,8,MediaTek Dimensity 6300,Android 14,6.67,AMOLED,images/phones/oppo-a80.jpg
+34,Oppo,A60,2299000,8,256,5000,50,8,Snapdragon 680,Android 14,6.67,IPS LCD,images/phones/oppo-a60.jpg
+35,Oppo,A38,1999000,6,128,5000,50,5,MediaTek Helio G85,Android 13,6.56,IPS LCD,images/phones/oppo-a38.jpg
+36,Oppo,A18,1699000,4,128,5000,8,5,MediaTek Helio G85,Android 13,6.56,IPS LCD,images/phones/oppo-a18.jpg
+37,Vivo,X200 Pro,15999000,16,512,6000,50,32,MediaTek Dimensity 9400,Android 15,6.78,AMOLED,images/phones/vivo-x200-pro.jpg
+38,Vivo,V40 Pro,6999000,12,512,5500,50,50,MediaTek Dimensity 9200+,Android 14,6.78,AMOLED,images/phones/vivo-v40-pro.jpg
+39,Vivo,V40,5299000,12,256,5500,50,50,Snapdragon 7 Gen 3,Android 14,6.78,AMOLED,images/phones/vivo-v40.jpg
+40,Vivo,V30 Pro,5999000,12,512,5000,50,50,MediaTek Dimensity 8200,Android 14,6.78,AMOLED,images/phones/vivo-v30-pro.jpg
+41,Vivo,Y38,2999000,8,256,6000,50,16,Snapdragon 680,Android 14,6.68,IPS LCD,images/phones/vivo-y38.jpg
+42,Vivo,Y28,2299000,8,256,6000,50,8,MediaTek Helio G85,Android 14,6.68,IPS LCD,images/phones/vivo-y28.jpg
+43,Vivo,Y18,1899000,6,128,5000,50,8,MediaTek Helio G85,Android 14,6.56,IPS LCD,images/phones/vivo-y18.jpg
+44,Realme,GT 7 Pro,8999000,12,512,6500,50,16,Snapdragon 8 Elite,Android 15,6.78,AMOLED,images/phones/realme-gt-7-pro.jpg
+45,Realme,GT 6,5999000,12,256,5500,50,32,Snapdragon 8s Gen 3,Android 14,6.78,AMOLED,images/phones/realme-gt-6.jpg
+46,Realme,13 Pro+,4999000,12,512,5200,50,32,Snapdragon 7s Gen 2,Android 14,6.7,AMOLED,images/phones/realme-13-pro-plus.jpg
+47,Realme,13 Pro,3999000,12,256,5200,50,32,Snapdragon 7s Gen 2,Android 14,6.7,AMOLED,images/phones/realme-13-pro.jpg
+48,Realme,13+,3299000,12,256,5000,50,16,MediaTek Dimensity 7300,Android 14,6.67,AMOLED,images/phones/realme-13-plus.jpg
+49,Realme,C65,2199000,8,256,5000,50,8,MediaTek Helio G85,Android 14,6.67,IPS LCD,images/phones/realme-c65.jpg
+50,Realme,C55,1999000,8,256,5000,64,8,MediaTek Helio G88,Android 13,6.72,IPS LCD,images/phones/realme-c55.jpg
+51,Realme,Narzo 70 Pro,3799000,12,256,5000,50,16,MediaTek Dimensity 7050,Android 14,6.67,AMOLED,images/phones/realme-narzo-70-pro.jpg
+52,OnePlus,13,13999000,16,512,6000,50,32,Snapdragon 8 Elite,Android 15,6.82,AMOLED,images/phones/oneplus-13.jpg
+53,OnePlus,12,11999000,16,512,5400,50,32,Snapdragon 8 Gen 3,Android 14,6.82,AMOLED,images/phones/oneplus-12.jpg
+54,OnePlus,Nord CE 4,4299000,8,256,5500,50,16,Snapdragon 7 Gen 3,Android 14,6.74,AMOLED,images/phones/oneplus-nord-ce-4.jpg
+55,OnePlus,Nord 4,5299000,12,256,5500,50,16,Snapdragon 7+ Gen 3,Android 14,6.74,AMOLED,images/phones/oneplus-nord-4.jpg
+56,Infinix,GT 20 Pro,3999000,12,256,5000,108,32,MediaTek Dimensity 8200,Android 14,6.78,AMOLED,images/phones/infinix-gt-20-pro.jpg
+57,Infinix,Note 40 Pro+,3499000,12,256,4600,108,32,MediaTek Dimensity 7020,Android 14,6.78,AMOLED,images/phones/infinix-note-40-pro-plus.jpg
+58,Infinix,Note 40 Pro,2999000,8,256,5000,108,32,MediaTek Helio G99,Android 14,6.78,AMOLED,images/phones/infinix-note-40-pro.jpg
+59,Infinix,Hot 50 Pro+,2499000,8,256,5000,50,8,MediaTek Helio G100,Android 14,6.7,AMOLED,images/phones/infinix-hot-50-pro-plus.jpg
+60,Infinix,Smart 8 Pro,1499000,8,256,5000,50,8,MediaTek Helio G36,Android 13,6.6,IPS LCD,images/phones/infinix-smart-8-pro.jpg
+61,Tecno,Phantom X3 Pro,8499000,12,512,5000,50,32,MediaTek Dimensity 9200,Android 14,6.8,AMOLED,images/phones/tecno-phantom-x3-pro.jpg
+62,Tecno,Camon 30 Premier,4299000,12,512,5000,50,50,MediaTek Dimensity 8200,Android 14,6.77,AMOLED,images/phones/tecno-camon-30-premier.jpg
+63,Tecno,Spark 20 Pro+,2299000,8,256,5000,108,32,MediaTek Helio G99,Android 14,6.78,AMOLED,images/phones/tecno-spark-20-pro-plus.jpg
+64,Tecno,Pova 6 Pro,2799000,12,256,6000,108,32,MediaTek Dimensity 6080,Android 14,6.78,AMOLED,images/phones/tecno-pova-6-pro.jpg
+65,Asus,ROG Phone 8 Pro,16999000,24,1024,5500,50,32,Snapdragon 8 Gen 3,Android 14,6.78,AMOLED,images/phones/asus-rog-phone-8-pro.jpg
+66,Asus,Zenfone 11 Ultra,11999000,16,512,5500,50,32,Snapdragon 8 Gen 3,Android 14,6.78,AMOLED,images/phones/asus-zenfone-11-ultra.jpg
+67,Asus,ROG Phone 7,13999000,16,512,6000,50,32,Snapdragon 8 Gen 2,Android 13,6.78,AMOLED,images/phones/asus-rog-phone-7.jpg
+68,Google,Pixel 9 Pro XL,18999000,16,512,5060,50,42,Google Tensor G4,Android 15,6.8,LTPO OLED,images/phones/pixel-9-pro-xl.jpg
+69,Google,Pixel 9 Pro,15999000,16,256,4700,50,42,Google Tensor G4,Android 15,6.3,LTPO OLED,images/phones/pixel-9-pro.jpg
+70,Google,Pixel 9,12999000,12,256,4700,50,10.5,Google Tensor G4,Android 15,6.3,OLED,images/phones/pixel-9.jpg
+71,Google,Pixel 8a,7999000,8,256,4492,64,13,Google Tensor G3,Android 14,6.1,OLED,images/phones/pixel-8a.jpg
+72,Nothing,Phone (2a) Plus,4999000,12,256,5000,50,50,MediaTek Dimensity 7350 Pro,Android 14,6.7,AMOLED,images/phones/nothing-phone-2a-plus.jpg
+73,Nothing,Phone (2a),4299000,12,256,5000,50,32,MediaTek Dimensity 7200 Pro,Android 14,6.7,AMOLED,images/phones/nothing-phone-2a.jpg
+74,Nothing,Phone (2),7999000,12,256,4700,50,32,Snapdragon 8+ Gen 1,Android 13,6.7,LTPO OLED,images/phones/nothing-phone-2.jpg
+75,Sony,Xperia 1 VI,19999000,12,512,5000,48,12,Snapdragon 8 Gen 3,Android 14,6.5,4K OLED,images/phones/sony-xperia-1-vi.jpg
+76,Sony,Xperia 5 VI,14999000,8,256,5000,48,12,Snapdragon 8 Gen 3,Android 14,6.1,OLED,images/phones/sony-xperia-5-vi.jpg
+77,Sony,Xperia 10 VI,6999000,6,128,5000,48,8,Snapdragon 695,Android 14,6.1,OLED,images/phones/sony-xperia-10-vi.jpg
+78,Motorola,Edge 50 Ultra,10999000,16,1024,4500,50,50,Snapdragon 8s Gen 3,Android 14,6.7,OLED,images/phones/motorola-edge-50-ultra.jpg
+79,Motorola,Edge 50 Pro,7999000,12,512,4500,50,50,Snapdragon 7 Gen 3,Android 14,6.7,OLED,images/phones/motorola-edge-50-pro.jpg
+80,Motorola,Moto G85,3499000,12,256,5000,50,32,Snapdragon 6s Gen 3,Android 14,6.67,OLED,images/phones/motorola-moto-g85.jpg
+81,Huawei,Pura 70 Ultra,17999000,16,1024,5200,50,13,Kirin 9010,HarmonyOS 4,6.8,LTPO OLED,images/phones/huawei-pura-70-ultra.jpg
+82,Huawei,Nova 12 Pro,7999000,12,512,4600,50,60,Kirin 8000,HarmonyOS 4,6.76,OLED,images/phones/huawei-nova-12-pro.jpg
+83,Huawei,Nova Y92,2699000,8,256,7000,50,8,Snapdragon 680,HarmonyOS 4,6.95,IPS LCD,images/phones/huawei-nova-y92.jpg
+84,Honor,Magic 6 Pro,13999000,12,512,5600,50,50,Snapdragon 8 Gen 3,Android 14,6.8,LTPO OLED,images/phones/honor-magic-6-pro.jpg
+85,Honor,X9c,4599000,12,512,6600,108,16,Snapdragon 6 Gen 1,Android 14,6.78,AMOLED,images/phones/honor-x9c.jpg
+86,Honor,X8c,2999000,8,256,4500,50,8,Snapdragon 680,Android 13,6.7,AMOLED,images/phones/honor-x8c.jpg
+87,Samsung,Galaxy F15,2199000,6,128,6000,50,13,MediaTek Dimensity 6100+,Android 14,6.6,Super AMOLED,images/phones/samsung-f15.jpg
+88,Xiaomi,13T,5999000,8,256,5000,50,20,MediaTek Dimensity 8200,Android 13,6.67,AMOLED,images/phones/xiaomi-13t.jpg
+89,Xiaomi,Poco M6 Pro,2799000,12,512,5000,64,16,MediaTek Helio G99,Android 13,6.67,AMOLED,images/phones/poco-m6-pro.jpg
+90,Vivo,T3 Pro,4299000,8,256,5500,50,16,Snapdragon 7 Gen 3,Android 14,6.77,AMOLED,images/phones/vivo-t3-pro.jpg
+91,Oppo,F27 Pro+,4499000,8,256,5000,64,32,MediaTek Dimensity 7050,Android 14,6.7,AMOLED,images/phones/oppo-f27-pro-plus.jpg
+92,Realme,P2 Pro,3499000,12,256,5200,50,32,Snapdragon 7s Gen 2,Android 14,6.7,AMOLED,images/phones/realme-p2-pro.jpg
+93,Infinix,Zero 40,4299000,12,512,5000,108,50,MediaTek Dimensity 8200,Android 14,6.78,AMOLED,images/phones/infinix-zero-40.jpg
+94,Tecno,Camon 20 Premier,3999000,8,512,5000,50,32,MediaTek Dimensity 8050,Android 13,6.67,AMOLED,images/phones/tecno-camon-20-premier.jpg
+95,OnePlus,Nord CE 3,3799000,12,256,5000,50,16,Snapdragon 782G,Android 13,6.7,AMOLED,images/phones/oneplus-nord-ce-3.jpg
+96,Asus,ROG Phone 8,14999000,16,512,5500,50,32,Snapdragon 8 Gen 3,Android 14,6.78,AMOLED,images/phones/asus-rog-phone-8.jpg
+97,Nothing,Phone (1),5999000,12,256,4500,50,16,Snapdragon 778G+,Android 13,6.55,OLED,images/phones/nothing-phone-1.jpg
+98,Motorola,Moto G54,2799000,12,256,5000,50,16,MediaTek Dimensity 7020,Android 13,6.5,IPS LCD,images/phones/motorola-moto-g54.jpg
+99,Sony,Xperia 1 V,18999000,12,256,5000,48,12,Snapdragon 8 Gen 2,Android 13,6.5,4K OLED,images/phones/sony-xperia-1-v.jpg
+100,Google,Pixel 8 Pro,16999000,12,512,5050,50,10.5,Google Tensor G3,Android 14,6.7,LTPO OLED,images/phones/pixel-8-pro.jpg
+101,Infinix,Hot 40 Pro,2099000,8,256,5000,108,32,MediaTek Helio G99,Android 13,6.78,AMOLED,images/phones/infinix-hot-40-pro.jpg
+102,Tecno,Spark 10 Pro,1899000,8,256,5000,50,32,MediaTek Helio G88,Android 13,6.8,IPS LCD,images/phones/tecno-spark-10-pro.jpg
+103,Realme,C67,1799000,8,256,5000,108,8,Snapdragon 685,Android 13,6.72,IPS LCD,images/phones/realme-c67.jpg
+104,Vivo,Y17s,1799000,6,128,5000,50,8,MediaTek Helio G85,Android 13,6.56,IPS LCD,images/phones/vivo-y17s.jpg
+105,Samsung,Galaxy A05s,1699000,6,128,5000,50,13,Snapdragon 680,Android 13,6.7,PLS LCD,images/phones/samsung-a05s.jpg
+106,Oppo,A17k,1499000,3,64,5000,8,5,MediaTek Helio G35,Android 12,6.56,IPS LCD,images/phones/oppo-a17k.jpg
+107,Xiaomi,Redmi A3,1199000,4,128,5000,8,5,MediaTek Helio G36,Android 14,6.71,IPS LCD,images/phones/redmi-a3.jpg
+108,Infinix,Smart 8,1099000,4,128,5000,13,8,Unisoc T606,Android 13,6.6,IPS LCD,images/phones/infinix-smart-8.jpg
+109,Tecno,Pop 8,999000,3,64,5000,12,8,Unisoc T606,Android 13,6.6,IPS LCD,images/phones/tecno-pop-8.jpg
+110,Realme,C30s,999000,3,64,5000,8,5,Unisoc SC9863A1,Android 12,6.5,IPS LCD,images/phones/realme-c30s.jpg
