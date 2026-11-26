@@ -1635,53 +1635,6 @@ input:-ms-input-placeholder {
   transform: translateX(-50%);
 }
 
-/* Compare Checkbox */
-.phone-compare {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  z-index: 10;
-}
-
-.compare-checkbox {
-  display: none;
-}
-
-.compare-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: white;
-  border: 2px solid var(--border-medium);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
-}
-
-.compare-label:hover {
-  border-color: var(--accent);
-  transform: scale(1.05);
-}
-
-.compare-checkbox:checked + .compare-label {
-  background-color: var(--accent);
-  border-color: var(--accent);
-}
-
-.compare-checkbox:checked + .compare-label::after {
-  content: '✓';
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.phone-card {
-  position: relative;
-}
-
 /* Sort Controls */
 .results-controls {
   display: flex;
@@ -1730,88 +1683,7 @@ input:-ms-input-placeholder {
   box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.1);
 }
 
-/* Compare Bar */
-.compare-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--accent);
-  color: white;
-  padding: 1rem;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.compare-bar.active {
-  transform: translateY(0);
-}
-
-.compare-bar-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.compare-bar-text {
-  font-size: 0.9375rem;
-  font-weight: 500;
-}
-
-.compare-bar-actions {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.compare-bar-btn {
-  padding: 0.5rem 1.25rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.compare-bar-btn.btn-compare {
-  background-color: white;
-  color: var(--accent);
-}
-
-.compare-bar-btn.btn-compare:hover {
-  background-color: var(--bg-secondary);
-}
-
-.compare-bar-btn.btn-clear {
-  background-color: transparent;
-  color: white;
-  border: 1.5px solid white;
-}
-
-.compare-bar-btn.btn-clear:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 @media (max-width: 768px) {
-  .compare-bar-content {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .compare-bar-actions {
-    width: 100%;
-  }
-  
-  .compare-bar-btn {
-    flex: 1;
-  }
-  
   .results-controls {
     flex-direction: column;
     align-items: stretch;

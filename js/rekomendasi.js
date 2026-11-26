@@ -15,13 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let selectedCategories = [];
   const categoryPills = document.querySelectorAll('.category-pill');
 
-  // Compare functionality
-  let compareList = [];
-  const compareBar = document.getElementById('compare-bar');
-  const compareCount = document.getElementById('compare-count');
-  const compareBtn = document.getElementById('compare-btn');
-  const compareClearBtn = document.getElementById('compare-clear-btn');
-
   // Sort functionality
   const sortSelect = document.getElementById('sort-select');
   let currentData = [];
@@ -55,20 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle compare actions
-  compareBtn.addEventListener('click', () => {
-    if (compareList.length > 0) {
-      const ids = compareList.join(',');
-      window.location.href = `compare.html?ids=${ids}`;
-    }
-  });
-
-  compareClearBtn.addEventListener('click', () => {
-    compareList = [];
-    updateCompareBar();
-    document.querySelectorAll('.compare-checkbox').forEach(cb => cb.checked = false);
-  });
-
   // Restore saved results on page load
   restoreSavedResults();
 
@@ -88,10 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reset category selection
     selectedCategories = [];
     categoryPills.forEach(pill => pill.classList.remove('active'));
-    
-    // Reset compare
-    compareList = [];
-    updateCompareBar();
     
     // Clear saved results
     sessionStorage.removeItem('lastSearchResults');
@@ -225,31 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function updateCompareBar() {
-    compareCount.textContent = compareList.length;
-    if (compareList.length > 0) {
-      compareBar.classList.add('active');
-    } else {
-      compareBar.classList.remove('active');
-    }
-  }
-
-  function handleCompareToggle(phoneId, isChecked) {
-    if (isChecked) {
-      if (compareList.length < 4 && !compareList.includes(phoneId)) {
-        compareList.push(phoneId);
-      } else if (compareList.length >= 4) {
-        const checkbox = document.querySelector(`input[value="${phoneId}"]`);
-        if (checkbox) checkbox.checked = false;
-        alert('Maksimal 4 HP untuk dibandingkan');
-        return;
-      }
-    } else {
-      compareList = compareList.filter(id => id !== phoneId);
-    }
-    updateCompareBar();
-  }
-
   function getBestCategoryBadge(phone, score, categories) {
     if (!score || !categories || categories.length === 0) return '';
     
@@ -281,11 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       return `
       <div class="card phone-card">
-        <div class="phone-compare">
-          <input type="checkbox" id="compare-${phone.id}" class="compare-checkbox" value="${phone.id}" onchange="handleCompareToggle(${phone.id}, this.checked)">
-          <label for="compare-${phone.id}" class="compare-label"></label>
-        </div>
-        
         <div class="phone-image">
           ${phone.image_url 
             ? `<img src="${phone.image_url}" alt="${phone.brand} ${phone.model}" onerror="this.parentElement.innerHTML='<div class=\\'phone-image-placeholder\\'>📱</div>'">`
@@ -342,18 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       `;
     }).join('');
-    
-    // Re-attach compare event listeners
-    document.querySelectorAll('.compare-checkbox').forEach(checkbox => {
-      const phoneId = parseInt(checkbox.value);
-      if (compareList.includes(phoneId)) {
-        checkbox.checked = true;
-      }
-    });
   }
-
-  // Make handleCompareToggle global
-  window.handleCompareToggle = handleCompareToggle;
 
   function restoreSavedResults() {
     const savedResults = sessionStorage.getItem('lastSearchResults');
